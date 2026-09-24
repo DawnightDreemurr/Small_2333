@@ -1,0 +1,86 @@
+/* ============ arcade.css · 梗游厅 ============ */
+.game-frame{background:#fff;border:var(--line-w) solid var(--ink);border-radius:16px;box-shadow:var(--shadow-hard);padding:26px;display:flex;flex-direction:column;gap:16px}
+html[data-theme="dark"] .game-frame{background:var(--paper-2)}
+.game-head{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.game-head h3{font-family:var(--display);font-weight:400;font-size:24px;display:flex;align-items:center;gap:10px}
+.game-head h3 .gno{font-family:var(--body);font-size:11px;font-weight:800;letter-spacing:2px;background:var(--pink);color:#fff;border:2px solid var(--ink);border-radius:5px;padding:2px 9px}
+.game-head .tip{font-size:12.5px;color:var(--ink-soft)}
+.game-hudbar{display:flex;flex-wrap:wrap;gap:0;border:var(--line-w) solid var(--ink);border-radius:9px;background:var(--paper);overflow:hidden;width:fit-content;font-variant-numeric:tabular-nums}
+.game-hudbar .cell{padding:8px 18px;border-right:var(--line-w) solid var(--ink);font-size:13px;font-weight:800;color:var(--ink-soft)}
+.game-hudbar .cell:last-child{border-right:none}
+.game-hudbar .cell b{color:var(--ink);font-family:var(--display);font-weight:400;font-size:17px;margin-left:6px}
+.game-hudbar .cell b.pink{color:var(--pink)} .game-hudbar .cell b.blue{color:var(--blue)}
+.game-stage{position:relative;border:var(--line-w) solid var(--ink);border-radius:12px;background:var(--paper-2);overflow:hidden;user-select:none;-webkit-user-select:none}
+/* ---- 冰红茶 ---- */
+#bottleCv{width:100%;display:block;touch-action:none;cursor:pointer}
+.bottle-side{display:flex;flex-direction:column;gap:12px}
+#bottleBtn{width:100%;padding:24px;font-size:21px;font-family:var(--display);border-radius:10px;background:var(--gold);border:var(--line-w) solid var(--ink);box-shadow:var(--shadow-hard);user-select:none;-webkit-user-select:none;touch-action:none;transition:transform .08s}
+#bottleBtn:active{transform:translate(4px,4px);box-shadow:2px 2px 0 var(--ink)}
+#bottleBtn:disabled{opacity:.55}
+.bottle-log{min-height:44px;font-weight:800;color:var(--pink);text-align:center;font-size:14.5px}
+/* ---- 肘击靶场 ---- */
+.holes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:22px}
+.hole{position:relative;aspect-ratio:1.35;border-radius:12px;background:var(--paper);border:2.5px dashed var(--ink-soft);overflow:hidden;cursor:crosshair}
+.hole .mole{position:absolute;left:50%;bottom:-8px;transform:translate(-50%,110%) scale(.6);font-size:52px;line-height:1;transition:transform .18s var(--ease-pop),opacity .18s;filter:drop-shadow(0 3px 0 rgba(23,23,26,.25))}
+.hole.up .mole{transform:translate(-50%,6%) scale(1)}
+.hole .fx{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:900;opacity:0;pointer-events:none}
+.hole.hit .fx{animation:hitFx .5s forwards}
+@keyframes hitFx{0%{opacity:1;transform:translateY(0) scale(.7)}100%{opacity:0;transform:translateY(-44px) scale(1.25)}}
+.hole.hit{background:#FFE9EF;border-color:var(--pink);border-style:solid}
+/* ---- 节奏现场 ---- */
+.rz-wrap{display:flex;flex-direction:column;gap:12px}
+.rz-lanes{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:16px 16px 18px}
+.rz-lane{position:relative;height:340px;border-radius:9px;background:var(--paper);border:2px solid var(--ink);overflow:hidden;cursor:pointer;touch-action:manipulation}
+.rz-lane .zone{position:absolute;left:0;right:0;bottom:0;height:64px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:15px;background:var(--paper-2);border-top:2.5px solid var(--ink)}
+.rz-lane .lane-tag{position:absolute;top:8px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:800;color:var(--ink-soft);z-index:2}
+.rz-lane .key{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);font-size:11px;font-weight:800;background:var(--ink);color:var(--paper);border-radius:5px;padding:2px 9px;z-index:2}
+.rz-lane .note{position:absolute;left:50%;transform:translateX(-50%);width:70%;height:34px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;border:2px solid var(--ink)}
+.rz-lane.flash{background:var(--gold)}
+.rz-lane.flash .zone{background:var(--gold)}
+.rz-judge{position:absolute;left:50%;top:34%;transform:translateX(-50%);font-family:var(--display);font-size:30px;color:var(--pink);opacity:0;pointer-events:none;text-align:center;z-index:5;text-shadow:2px 2px 0 #fff}
+.rz-judge.pop{animation:hitFx .5s forwards}
+.rz-combo{position:absolute;right:18px;top:14px;font-family:var(--display);font-size:22px;color:var(--ink);z-index:5}
+.rz-note-n{background:var(--blue-soft)} .rz-note-n .nemoji{opacity:0}
+/* 结果覆盖层 */
+.game-over{position:absolute;inset:0;background:rgba(23,23,26,.82);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;z-index:10}
+.game-over .big{font-family:var(--display);font-size:32px;color:var(--gold)}
+.game-over .sub{color:#EDEAE2;font-size:14px}
+.game-over .btn{margin-top:10px}
+.arcade-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.arcade-links a{display:flex;flex-direction:column;gap:6px;background:#fff;border:var(--line-w) solid var(--ink);border-radius:12px;padding:20px;box-shadow:var(--shadow-hard);transition:transform var(--t-fast) var(--ease-pop),box-shadow var(--t-fast)}
+html[data-theme="dark"] .arcade-links a{background:var(--paper-2)}
+.arcade-links a:hover{transform:translate(-4px,-4px);box-shadow:9px 9px 0 var(--pink)}
+.arcade-links b{font-size:16px}
+.arcade-links span{font-size:12.5px;color:var(--ink-soft)}
+
+/* ---- 通用双栏游戏布局 ---- */
+.bottle-layout{display:grid;grid-template-columns:1fr 240px;gap:20px;align-items:stretch}
+.db-layout{display:grid;grid-template-columns:1fr 230px;gap:20px;align-items:stretch}
+@media(max-width:760px){.bottle-layout,.db-layout{grid-template-columns:1fr}}
+/* ---- 电子木鱼 ---- */
+.muyu-stage{min-height:330px;display:flex;align-items:center;justify-content:center;position:relative;touch-action:manipulation}
+#muyuDisc{width:244px;height:244px;border-radius:50%;background:#D28B45;border:3.5px solid var(--ink);box-shadow:var(--shadow-hard),inset 0 0 0 16px rgba(91,59,20,.28),inset 0 -16px 0 rgba(91,59,20,.32);display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;z-index:2;transition:transform .07s;-webkit-tap-highlight-color:transparent}
+#muyuDisc span{font-family:var(--display);font-size:44px;letter-spacing:6px;color:#5B3B14;transform:rotate(-6deg);text-shadow:0 2px 0 rgba(255,255,255,.35)}
+#muyuDisc::after{content:"";position:absolute;bottom:26px;left:50%;transform:translateX(-50%);width:64px;height:16px;border-radius:50%;background:#5B3B14;border:2.5px solid var(--ink)}
+#muyuDisc:active{transform:scale(.93)}
+#muyuDisc.whack{transform:scale(.9) rotate(-2deg)}
+#muyuMallet{position:absolute;right:calc(50% - 215px);top:calc(50% - 150px);width:19px;height:132px;background:#B8792F;border:3px solid var(--ink);border-radius:8px;transform:rotate(28deg);transform-origin:bottom left;z-index:1;transition:transform .09s}
+#muyuMallet::after{content:"";position:absolute;left:-13px;top:-32px;width:42px;height:42px;border-radius:50%;background:#8a5a22;border:3px solid var(--ink)}
+#muyuMallet.whack{transform:rotate(-14deg)}
+.ripple{position:absolute;left:50%;top:50%;width:244px;height:244px;margin:-122px 0 0 -122px;border-radius:50%;border:3px solid var(--pink);opacity:0;pointer-events:none;z-index:1}
+.ripple.go{animation:ripple .7s ease-out forwards}
+@keyframes ripple{0%{opacity:.8;transform:scale(.7)}100%{opacity:0;transform:scale(1.7)}}
+.merit-float{position:absolute;left:50%;top:26%;font-family:var(--display);font-size:21px;color:var(--pink);text-shadow:1.5px 1.5px 0 #fff;pointer-events:none;z-index:3;animation:meritUp 1s ease-out forwards;white-space:nowrap}
+@keyframes meritUp{to{transform:translate(-30%,-96px) rotate(-6deg);opacity:0}}
+/* ---- 分贝机 ---- */
+.db-num{position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);font-family:var(--display);font-size:58px;color:var(--ink);pointer-events:none;text-align:center;line-height:1}
+.db-num small{font-size:16px;color:var(--ink-soft);margin-left:4px}
+#dbBtn{width:100%;padding:34px 20px;font-size:22px;font-family:var(--display);border-radius:10px;background:var(--pink);color:#fff;border:var(--line-w) solid var(--ink);box-shadow:var(--shadow-hard);user-select:none;-webkit-user-select:none;touch-action:none;transition:transform .08s,box-shadow .08s}
+#dbBtn:active{transform:translate(4px,4px);box-shadow:2px 2px 0 var(--ink)}
+.game-stage.shake{animation:dbShake .18s linear infinite}
+@keyframes dbShake{0%{transform:translate(0,0)}25%{transform:translate(1.5px,-1px)}50%{transform:translate(-1.5px,1px)}75%{transform:translate(1px,1.5px)}100%{transform:translate(0,0)}}
+@media (prefers-reduced-motion: reduce){.game-stage.shake{animation:none}}
+
+@media(max-width:460px){#muyuMallet{display:none}#muyuDisc{width:200px;height:200px}}
+
+#cpsBtn,#bottleBtn,#dbBtn,#muyuDisc,.sl-btn,#fleeBtn,.hole{-webkit-touch-callout:none}

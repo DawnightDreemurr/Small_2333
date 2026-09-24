@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#FAF6EF">
+<script>/* 防主题闪烁 */(function(){try{var m=location.search.match(/[?&]theme=(light|dark)/);var t=m?m[1]:localStorage.getItem("meme-theme");if(!t&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)t="dark";if(t){document.documentElement.setAttribute("data-theme",t);var mc=document.querySelector("meta[name=\"theme-color\"]");if(mc)mc.content=t==="dark"?"#141419":"#FAF6EF"}}catch(e){}})();</script>
+<title>三连现场 | 小破站梗文化博物馆</title>
+<meta name="description" content="点赞投币收藏现场，长按投币×2，还有一只抓不到的「下次一定」。">
+<link rel="canonical" href="https://meme-museum.example.com/sanlian.html">
+<meta name="robots" content="index,follow">
+<meta property="og:site_name" content="小破站梗文化博物馆">
+<meta property="og:type" content="website">
+<meta property="og:title" content="三连现场 · 充电桩已就位 | 小破站梗文化博物馆">
+<meta property="og:description" content="点赞、投币、收藏一次到位：长按投币 ×2 的老传统，还有一只抓到就替你三连的「下次一定」。">
+<meta property="og:url" content="https://meme-museum.example.com/sanlian.html">
+<meta property="og:image" content="https://meme-museum.example.com/docs/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="小破站梗文化博物馆：🪙三连现场">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="三连现场 · 充电桩已就位 | 小破站梗文化博物馆">
+<meta name="twitter:description" content="点赞、投币、收藏一次到位：长按投币 ×2 的老传统，还有一只抓到就替你三连的「下次一定」。">
+<meta name="twitter:image" content="https://meme-museum.example.com/docs/og-card.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"三连现场","url":"https://meme-museum.example.com/sanlian.html","description":"点赞、投币、收藏一次到位：长按投币 ×2 的老传统，还有一只抓到就替你三连的「下次一定」。","isPartOf":{"@type":"WebSite","name":"小破站梗文化博物馆","url":"https://meme-museum.example.com/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://meme-museum.example.com/"},{"@type":"ListItem","position":2,"name":"三连现场","item":"https://meme-museum.example.com/sanlian.html"}]}}</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📺</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/components.css"><link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="sanlian">
+<div id="loader"><div class="panel"><div class="tv">📺</div><div class="bar"><i id="loadBar"></i></div><div class="msg" id="loadMsg">开馆中…</div></div></div>
+<main>
+<section class="page-hero"><div class="container">
+  <div class="crumbs"><a href="index.html"><i data-lucide="home"></i>首页</a> / 三连现场</div>
+  <h1><i data-lucide="coins" style="width:.85em;height:.85em;vertical-align:-.08em;margin-right:6px"></i><em>三连现场</em> · 充电桩已就位</h1>
+  <p class="lead">博物馆免费开放，但快乐需要维护。点点下面，让馆长看到你的诚意。</p>
+</div></section>
+<section class="sec"><div class="container">
+  <div class="sanlian-wrap">
+    <div class="sl-btns">
+      <button class="sl-btn" id="likeBtn"><span class="em">👍</span><b id="likeN">233</b><span>点赞</span></button>
+      <button class="sl-btn" id="coinBtn"><span class="em">🪙</span><b id="coinN">999</b><span>投币</span></button>
+      <button class="sl-btn" id="starBtn"><span class="em">⭐</span><b id="starN">666</b><span>收藏</span></button>
+    </div>
+    <p class="sl-hint">点一下 = 1 个 · 长按投币 = 2 个（B 站老传统）· 数字自动保存</p>
+    <div class="flee-zone" id="fleeZone"><button id="fleeBtn">下次一定</button></div>
+    <p class="sl-hint">据说这只「下次一定」很难抓，抓到有惊喜。</p>
+  </div>
+</div></section>
+</main>
+<div id="toasts" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script src="js/data.js"></script><script src="js/core.js"></script><script src="js/sound.js"></script>
+<script src="js/fx.js"></script><script src="js/sanlian.js"></script>
+</body>
+</html>

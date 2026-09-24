@@ -1,0 +1,33 @@
+/* ============ philosophy.css · 哲♂学厅 ============ */
+.philo-origin{display:grid;grid-template-columns:200px 1fr;gap:26px;align-items:center;background:#fff;border:var(--line-w) solid var(--ink);border-radius:16px;padding:30px;box-shadow:var(--shadow-hard)}
+html[data-theme="dark"] .philo-origin{background:var(--paper-2)}
+@media(max-width:760px){.philo-origin{grid-template-columns:1fr}}
+.philo-portrait{width:200px;height:200px;border-radius:14px;border:var(--line-w) solid var(--ink);box-shadow:var(--shadow-hard-sm);background:linear-gradient(150deg,var(--pink),var(--pink));display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-family:var(--display);gap:6px;overflow:hidden;position:relative}
+.philo-portrait .mp{font-size:84px;line-height:1;filter:drop-shadow(0 4px 0 rgba(0,0,0,.25))}
+.philo-portrait small{font-size:12px;letter-spacing:3px;opacity:.9}
+.philo-origin h3{font-family:var(--display);font-weight:400;font-size:26px}
+.philo-origin .memo{font-size:14px;color:var(--ink-soft);margin-top:8px}
+.philo-origin .totem{display:inline-block;margin-top:14px;font-family:var(--display);font-size:22px;background:var(--gold);border:var(--line-w) solid var(--ink);border-radius:8px;padding:6px 20px;box-shadow:var(--shadow-hard-sm);transform:rotate(-2deg)}
+/* 转换器 */
+.conv-box{background:#fff;border:var(--line-w) solid var(--ink);border-radius:16px;padding:30px;box-shadow:var(--shadow-hard);display:flex;flex-direction:column;gap:18px}
+html[data-theme="dark"] .conv-box{background:var(--paper-2)}
+.conv-box textarea{width:100%;min-height:96px;resize:vertical;border:var(--line-w) solid var(--ink);border-radius:10px;padding:14px;background:var(--paper);outline:none}
+.conv-box textarea:focus{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--blue)}
+.conv-out{min-height:92px;border:2.5px dashed var(--pink);border-radius:12px;padding:16px 20px;font-family:var(--display);font-size:26px;line-height:1.7;word-break:break-all;background:var(--paper)}
+.conv-out b{color:var(--pink);font-size:1.05em}
+.conv-samples{display:flex;gap:9px;flex-wrap:wrap}
+/* 词汇表 */
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:20px}
+.vocab-card{background:#fff;border:var(--line-w) solid var(--ink);border-radius:12px;padding:22px;box-shadow:var(--shadow-hard);transition:transform var(--t-fast) var(--ease-pop),box-shadow var(--t-fast);position:relative;overflow:hidden}
+html[data-theme="dark"] .vocab-card{background:var(--paper-2)}
+.vocab-card:hover{transform:translate(-4px,-4px);box-shadow:9px 9px 0 var(--pink)}
+.vocab-card b{font-family:var(--display);font-weight:400;font-size:24px;display:block;margin-bottom:8px}
+.vocab-card b i.mp{font-style:normal;color:var(--pink)}
+.vocab-card p{font-size:13.5px;color:var(--ink-soft)}
+.vocab-card::after{content:"♂";position:absolute;right:-6px;bottom:-22px;font-size:74px;color:transparent;-webkit-text-stroke:1.5px var(--ink);opacity:.10;pointer-events:none}
+/* 守则 */
+.creed-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.creed{background:var(--paper-2);border:var(--line-w) solid var(--ink);border-radius:12px;padding:22px;box-shadow:var(--shadow-hard-sm)}
+.creed b{font-family:var(--display);font-weight:400;font-size:19px;color:var(--pink);display:block;margin-bottom:6px}
+.creed p{font-size:13px;color:var(--ink-soft)}
+.philo-note{font-size:12.5px;color:var(--ink-soft);border:1.5px dashed var(--ink-soft);border-radius:9px;padding:10px 16px;background:var(--paper-2)}

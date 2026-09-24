@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#FAF6EF">
+<script>/* 防主题闪烁 */(function(){try{var m=location.search.match(/[?&]theme=(light|dark)/);var t=m?m[1]:localStorage.getItem("meme-theme");if(!t&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)t="dark";if(t){document.documentElement.setAttribute("data-theme",t);var mc=document.querySelector("meta[name=\"theme-color\"]");if(mc)mc.content=t==="dark"?"#141419":"#FAF6EF"}}catch(e){}})();</script>
+<title>游乐场 | 小破站梗文化博物馆</title>
+<meta name="description" content="八个互动小玩意儿：梗运势、记忆翻牌、手速大作战、三连大作战、猜拳、梗浓度检测、梗命转盘、梗码工坊。">
+<link rel="canonical" href="https://meme-museum.example.com/playground.html">
+<meta name="robots" content="index,follow">
+<meta property="og:site_name" content="小破站梗文化博物馆">
+<meta property="og:type" content="website">
+<meta property="og:title" content="游乐场 · 八个互动小玩意儿 | 小破站梗文化博物馆">
+<meta property="og:description" content="梗运势、记忆翻牌、手速大作战、三连大作战、猜拳大战、梗浓度检测仪、梗命转盘、梗码工坊——免费街机随便玩。">
+<meta property="og:url" content="https://meme-museum.example.com/playground.html">
+<meta property="og:image" content="https://meme-museum.example.com/docs/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="小破站梗文化博物馆：🕹️游乐场">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="游乐场 · 八个互动小玩意儿 | 小破站梗文化博物馆">
+<meta name="twitter:description" content="梗运势、记忆翻牌、手速大作战、三连大作战、猜拳大战、梗浓度检测仪、梗命转盘、梗码工坊——免费街机随便玩。">
+<meta name="twitter:image" content="https://meme-museum.example.com/docs/og-card.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"游乐场","url":"https://meme-museum.example.com/playground.html","description":"梗运势、记忆翻牌、手速大作战、三连大作战、猜拳大战、梗浓度检测仪、梗命转盘、梗码工坊——免费街机随便玩。","isPartOf":{"@type":"WebSite","name":"小破站梗文化博物馆","url":"https://meme-museum.example.com/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://meme-museum.example.com/"},{"@type":"ListItem","position":2,"name":"游乐场","item":"https://meme-museum.example.com/playground.html"}]}}</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📺</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/components.css"><link rel="stylesheet" href="css/playground.css">
+</head>
+<body data-page="playground">
+<div id="loader"><div class="panel"><div class="tv">📺</div><div class="bar"><i id="loadBar"></i></div><div class="msg" id="loadMsg">开馆中…</div></div></div>
+<main>
+<section class="page-hero"><div class="container">
+  <div class="crumbs"><a href="index.html"><i data-lucide="home"></i>首页</a> / 游乐场</div>
+  <h1><i data-lucide="gamepad-2" style="width:.85em;height:.85em;vertical-align:-.08em;margin-right:6px"></i><em>游乐场</em> · 八个小玩意儿随便玩</h1>
+  <p class="lead">运势、翻牌、手速、接币、猜拳、检测仪、转盘、梗码——全是免费街机，不投币也让你玩。</p>
+</div></section>
+<section class="sec"><div class="container">
+  <div class="arcade-links" style="margin-bottom:26px">
+      <a href="arcade.html"><b>🧊 冰红茶 · 翻瓶挑战</b><span>蓄力翻瓶物理街机 →</span></a>
+      <a href="arcade.html"><b>🏀 牢大 · 肘击靶场</b><span>30 秒限时肘击打地鼠 →</span></a>
+      <a href="arcade.html"><b>🐔 鸡你太美 · 节奏现场</b><span>唱跳Rap篮球四键音游 →</span></a>
+      <a href="arcade.html"><b>🪵 电子木鱼 · 敲击修行</b><span>功德+1，烦恼-1 →</span></a>
+      <a href="arcade.html"><b>😤 奥利给 · 呐喊分贝机</b><span>支持真麦克风实测 →</span></a>
+    </div>
+    <div class="pg-grid">
+    <div class="widget">
+      <h3><i data-lucide="sparkles"></i>今日梗运势 <span class="badge">每日玄学</span></h3>
+      <p class="desc">按日期封签，全站今天翻到的是同一张，绝对玄学公平。</p>
+      <div id="fortuneCard"><div class="lv" id="fLv">…</div><div class="msg" id="fMsg"></div><div class="meta" id="fMeta"></div></div>
+      <div class="gen-row"><button id="fRedraw" class="btn btn-gold btn-sm"><i data-lucide="dices"></i>重抽（硬币 -1，假的）</button></div>
+    </div>
+    <div class="widget">
+      <h3><i data-lucide="brain"></i>梗记忆翻牌 <span class="badge">8 对</span></h3>
+      <p class="desc">经典配对游戏，梗味elu造版。翻出全部 8 对即通关。</p>
+      <div class="mem-grid" id="memGrid"></div>
+      <div class="mem-stat"><span>步数 <b id="memMoves">0</b></span><span>用时 <b id="memTime">0s</b></span></div>
+      <p class="w-note" id="memStat">翻出全部 8 对即通关！</p>
+      <div class="gen-row"><button id="memRestart" class="btn btn-ghost btn-sm"><i data-lucide="refresh-cw"></i>重洗牌桌</button></div>
+    </div>
+    <div class="widget">
+      <h3><i data-lucide="zap"></i>手速大作战 <span class="badge">10 秒</span></h3>
+      <p class="desc">10 秒内狂点按钮，测测你的弹幕手速什么段位。</p>
+      <div class="cps-stage">
+        <button id="cpsBtn">开始挑战</button>
+        <div class="cps-bar"><i id="cpsBar"></i></div>
+        <p class="w-note">历史最佳：<b id="cpsBest">—</b> 点/秒 · 上局段位：<span id="cpsRank">待测</span></p>
+      </div>
+    </div>
+    <div class="widget">
+      <h3><i data-lucide="scissors"></i>猜拳大战 <span class="badge">vs 小电视</span></h3>
+      <p class="desc">小电视出招全靠玄学，输了它还会嘲讽你。</p>
+      <div class="rps-stage"><span class="rps-hand" id="rpsMyHand">❓</span><b>VS</b><span class="rps-hand" id="rpsTvHand">📺</span></div>
+      <div id="rpsResult">出招吧！</div>
+      <div class="rps-btns" id="rpsBtns">
+        <button data-h="0" aria-label="石头">✊</button><button data-h="1" aria-label="布">✋</button><button data-h="2" aria-label="剪刀">✌️</button>
+      </div>
+      <p class="w-note" id="rpsScore">胜 0 · 负 0 · 平 0</p>
+    </div>
+    <div class="widget wide">
+      <h3><i data-lucide="target"></i>三连大作战 <span class="badge">30 秒街机</span></h3>
+      <p class="desc">左右移动小电视：接住 🪙👍 各 +10、⭐ +15，碰到 🕊️😴（下次一定）-20。鼠标或手指拖动即可。</p>
+      <div class="game-stage">
+        <canvas id="gameCanvas" width="460" height="520"></canvas>
+        <div class="game-hud"><span>得分 <b id="gScore">0</b></span><span>剩余 <b id="gTime">30s</b></span><span>最佳 <b id="gBest">0</b></span></div>
+        <button id="gStart" class="btn btn-primary btn-sm"><i data-lucide="play"></i>开始游戏</button>
+      </div>
+    </div>
+    <div class="widget">
+      <h3><i data-lucide="microscope"></i>梗浓度检测仪 <span class="badge">玄学谱仪</span></h3>
+      <p class="desc">把你的签名、群聊记录、周报（误）粘贴进来，测定梗浓度。</p>
+      <div class="dens-wrap">
+        <textarea id="densText" placeholder="例如：这周加班到红温，只想躺平，午饭靠电子榨菜续命，真香…"></textarea>
+        <div class="dens-gauge"><i id="densGaugeI"></i></div>
+        <div id="densVerdict">待检测</div>
+        <div id="densReport"></div>
+      </div>
+      <div class="gen-row"><button id="densGo" class="btn btn-primary btn-sm"><i data-lucide="microscope"></i>开始检测</button></div>
+    </div>
+    <div class="widget">
+      <h3><i data-lucide="ferris-wheel"></i>梗命转盘 <span class="badge">命运决策</span></h3>
+      <p class="desc">不知道今天刷什么梗？让命运替你选。</p>
+      <div class="wheel-stage">
+        <canvas id="wheelCv" width="320" height="320"></canvas>
+        <button id="wheelGo" class="btn btn-gold btn-sm"><i data-lucide="dices"></i>转！</button>
+        <div id="wheelResult">指针朝哪吃哪，不退不换。</div>
+      </div>
+    </div>
+    <div class="widget">
+      <h3><i data-lucide="qr-code"></i>梗码工坊 <span class="badge">二维码</span></h3>
+      <p class="desc">文字 / 网址一键生成粉色梗码，下载发给朋友扫码进场。</p>
+      <div class="qr-wrap">
+        <input id="qrText" placeholder="输入文字 / 网址，生成你的专属梗码">
+        <div id="qrBox"><p class="w-note">加载中…</p></div>
+        <div class="gen-row">
+          <button id="qrGen" class="btn btn-primary btn-sm">生成梗码</button>
+          <button id="qrSite" class="btn btn-ghost btn-sm"><i data-lucide="link"></i>用本站网址</button>
+          <button id="qrDown" class="btn btn-ghost btn-sm"><i data-lucide="download"></i>下载</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></section>
+</main>
+<div id="toasts" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+<script src="js/data.js"></script><script src="js/core.js"></script><script src="js/sound.js"></script>
+<script src="js/fx.js"></script><script src="js/playground.js"></script>
+</body>
+</html>

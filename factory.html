@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#FAF6EF">
+<script>/* 防主题闪烁 */(function(){try{var m=location.search.match(/[?&]theme=(light|dark)/);var t=m?m[1]:localStorage.getItem("meme-theme");if(!t&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)t="dark";if(t){document.documentElement.setAttribute("data-theme",t);var mc=document.querySelector("meta[name=\"theme-color\"]");if(mc)mc.content=t==="dark"?"#141419":"#FAF6EF"}}catch(e){}})();</script>
+<title>梗图工厂 | 小破站梗文化博物馆</title>
+<meta name="description" content="在线梗图生成器：底色模板 × 金句 × 字号 × 底纹，Canvas 直出可下载。">
+<link rel="canonical" href="https://meme-museum.example.com/factory.html">
+<meta name="robots" content="index,follow">
+<meta property="og:site_name" content="小破站梗文化博物馆">
+<meta property="og:type" content="website">
+<meta property="og:title" content="梗图工厂 · 在线梗图生成器 | 小破站梗文化博物馆">
+<meta property="og:description" content="选底色、写金句、调字号底纹，Canvas 实时渲染 800×1000 高清梗图，一键下载发群里。">
+<meta property="og:url" content="https://meme-museum.example.com/factory.html">
+<meta property="og:image" content="https://meme-museum.example.com/docs/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="小破站梗文化博物馆：🏭梗图工厂">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="梗图工厂 · 在线梗图生成器 | 小破站梗文化博物馆">
+<meta name="twitter:description" content="选底色、写金句、调字号底纹，Canvas 实时渲染 800×1000 高清梗图，一键下载发群里。">
+<meta name="twitter:image" content="https://meme-museum.example.com/docs/og-card.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"梗图工厂","url":"https://meme-museum.example.com/factory.html","description":"选底色、写金句、调字号底纹，Canvas 实时渲染 800×1000 高清梗图，一键下载发群里。","isPartOf":{"@type":"WebSite","name":"小破站梗文化博物馆","url":"https://meme-museum.example.com/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://meme-museum.example.com/"},{"@type":"ListItem","position":2,"name":"梗图工厂","item":"https://meme-museum.example.com/factory.html"}]}}</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📺</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/components.css"><link rel="stylesheet" href="css/pages.css">
+</head>
+<body data-page="factory">
+<div id="loader"><div class="panel"><div class="tv">📺</div><div class="bar"><i id="loadBar"></i></div><div class="msg" id="loadMsg">开馆中…</div></div></div>
+<main>
+<section class="page-hero"><div class="container">
+  <div class="crumbs"><a href="index.html"><i data-lucide="home"></i>首页</a> / 梗图工厂</div>
+  <h1><i data-lucide="factory" style="width:.85em;height:.85em;vertical-align:-.08em;margin-right:6px"></i><em>梗图工厂</em> · 人人都是 UP 主</h1>
+  <p class="lead">选个底色，写两句金句，一张原创梗图即刻出炉。下载发到群里，下个热梗就姓你。</p>
+</div></section>
+<section class="sec"><div class="container">
+  <div class="factory">
+    <div class="gen-controls">
+      <div><label>底色模板</label>
+        <div class="tpl-row" id="tplRow">
+          <button class="tpl on" data-t="pink" style="background:linear-gradient(135deg,#FFB6C9,#FB7299,#F25D8E)"><span>高能粉</span></button>
+          <button class="tpl" data-t="blue" style="background:linear-gradient(135deg,#8ED8F8,#00A1D6,#0077AA)"><span>冲浪蓝</span></button>
+          <button class="tpl" data-t="gold" style="background:linear-gradient(135deg,#FFE7A3,#FFB027,#FF9231)"><span>硬币金</span></button>
+          <button class="tpl" data-t="green" style="background:linear-gradient(135deg,#9BFFB6,#38F9D7,#2AC864)"><span>抽象绿</span></button>
+        </div>
+      </div>
+      <div><label for="genTop">上排文字</label><input id="genTop" type="text" maxlength="20" value="前方高能"></div>
+      <div><label for="genBottom">下排文字</label><input id="genBottom" type="text" maxlength="20" value="非战斗人员请撤离"></div>
+      <div><label for="genSize">字号 <b id="genSizeVal">72</b>px</label><input id="genSize" type="range" min="40" max="110" value="72"></div>
+      <div><label for="genPat">底纹</label>
+        <select id="genPat" style="width:100%;border:2px solid var(--border);border-radius:12px;padding:10px 14px;background:var(--bg);outline:none">
+          <option value="none">纯净无纹</option><option value="dots" selected>圆点波普</option>
+          <option value="lines">斜纹拉丝</option><option value="danmu">弹幕残影</option>
+        </select>
+      </div>
+      <div class="gen-row">
+        <button class="btn btn-ghost btn-sm" id="genRandom"><i data-lucide="dices"></i>换组金句</button>
+        <button class="btn btn-primary btn-sm" id="genDownload"><i data-lucide="download"></i>下载梗图</button>
+      </div>
+    </div>
+    <div class="gen-preview">
+      <canvas id="genCanvas" width="800" height="1000"></canvas>
+      <p style="font-size:12px;color:var(--muted);margin-top:12px">预览即为成品 · 800×1000 高清直出</p>
+    </div>
+  </div>
+</div></section>
+</main>
+<div id="toasts" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script src="js/data.js"></script><script src="js/core.js"></script><script src="js/sound.js"></script>
+<script src="js/fx.js"></script><script src="js/factory.js"></script>
+</body>
+</html>

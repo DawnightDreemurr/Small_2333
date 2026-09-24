@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#FAF6EF">
+<script>/* 防主题闪烁 */(function(){try{var m=location.search.match(/[?&]theme=(light|dark)/);var t=m?m[1]:localStorage.getItem("meme-theme");if(!t&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)t="dark";if(t){document.documentElement.setAttribute("data-theme",t);var mc=document.querySelector("meta[name=\"theme-color\"]");if(mc)mc.content=t==="dark"?"#141419":"#FAF6EF"}}catch(e){}})();</script>
+<title>梗编年史 · 滚动长卷 | 小破站梗文化博物馆</title>
+<meta name="description" content="2009 → 2026 梗编年史滚动动画长卷：时间轴随滚动生长，年度弹幕逐一点亮，2026 年度热梗由你申报收录。">
+<link rel="canonical" href="https://meme-museum.example.com/history.html">
+<meta name="robots" content="index,follow">
+<meta property="og:site_name" content="小破站梗文化博物馆">
+<meta property="og:type" content="website">
+<meta property="og:title" content="梗编年史 2009-2026 · 滚动动画长卷 | 小破站梗文化博物馆">
+<meta property="og:description" content="从 2009 年建站到 2026 年新梗：滚动驱动的时间轴长卷，四大时代分章，五枚官方年度弹幕徽章，2026 由你申报。">
+<meta property="og:url" content="https://meme-museum.example.com/history.html">
+<meta property="og:image" content="https://meme-museum.example.com/docs/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="小破站梗文化博物馆：🕰️梗编年史">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="梗编年史 2009-2026 · 滚动动画长卷 | 小破站梗文化博物馆">
+<meta name="twitter:description" content="从 2009 年建站到 2026 年新梗：滚动驱动的时间轴长卷，四大时代分章，五枚官方年度弹幕徽章，2026 由你申报。">
+<meta name="twitter:image" content="https://meme-museum.example.com/docs/og-card.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"梗编年史","url":"https://meme-museum.example.com/history.html","description":"从 2009 年建站到 2026 年新梗：滚动驱动的时间轴长卷，四大时代分章，五枚官方年度弹幕徽章，2026 由你申报。","isPartOf":{"@type":"WebSite","name":"小破站梗文化博物馆","url":"https://meme-museum.example.com/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://meme-museum.example.com/"},{"@type":"ListItem","position":2,"name":"梗编年史","item":"https://meme-museum.example.com/history.html"}]}}</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📺</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   base.css · 设计令牌 + 壳层
+   Design Language: Pop Editorial（电视大字报 × 漫画贴纸）
+   ============================================================ */
+:root{
+  /* 色彩：纸感底 + 墨线 + 双品牌强调色（粉为主、蓝为辅、金绿点缀） */
+  --paper:#FAF6EF; --paper-2:#F3EDE2; --ink:#17171A; --ink-soft:#56565E;
+  --pink:#F25D8E; --pink-soft:#FFD9E5; --blue:#00A1D6; --blue-soft:#D3F1FB;
+  --gold:#FFC533; --green:#2AC864;
+  --line:var(--ink); --line-w:2px;
+  --shadow-hard:6px 6px 0 var(--ink);
+  --shadow-hard-sm:4px 4px 0 var(--ink);
+  --shadow-hard-pink:6px 6px 0 var(--pink);
+  /* 字体 */
+  --display:"ZCOOL KuaiLe","Noto Sans SC",sans-serif;
+  --body:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+  /* 节奏 */
+  --r-sm:8px; --r-md:12px; --r-lg:16px;
+  --t-fast:.15s; --t-med:.3s; --t-slow:.6s;
+  --ease-pop:cubic-bezier(.2,.9,.3,1.2);
+  --rail-h:64px;
+}
+html[data-theme="dark"]{
+  --paper:#141419; --paper-2:#1B1B22; --ink:#F2EFE8; --ink-soft:#A9A9B4;
+  --pink:#FF7BA5; --pink-soft:#3A2430; --blue:#33B9E4; --blue-soft:#143240;
+  --gold:#FFCE4F; --green:#43D67B;
+  --line:#08080A;
+  --shadow-hard:6px 6px 0 rgba(0,0,0,.9);
+  --shadow-hard-sm:4px 4px 0 rgba(0,0,0,.9);
+  --shadow-hard-pink:6px 6px 0 var(--pink);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+/* 点阵背景固定为独立合成层：不再随滚动逐帧重绘（长页滚动卡顿主因） */
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:radial-gradient(rgba(23,23,26,.055) 1.2px,transparent 1.2px);background-size:26px 26px}
+html[data-theme="dark"] body::before{background-image:radial-gradient(rgba(255,255,255,.05) 1.2px,transparent 1.2px)}
+img,canvas{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input,select,textarea{font-family:inherit;font-size:1rem;color:var(--ink)}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+main{min-height:60vh}
+::selection{background:var(--pink);color:#fff}
+/* 电视扫描线装饰（区块分割，替代渐变光效） */
+.scanlines{height:14px;background:repeating-linear-gradient(90deg,var(--ink) 0 26px,transparent 26px 34px);opacity:.9}
+/* ============ 加载彩蛋 ============ */
+#loader{position:fixed;inset:0;z-index:999;background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity .35s,visibility .35s}
+#loader.done{opacity:0;visibility:hidden;pointer-events:none}
+#loader .panel{border:var(--line-w) solid var(--ink);border-radius:var(--r-md);background:#fff;box-shadow:var(--shadow-hard);padding:30px 40px;text-align:center}
+html[data-theme="dark"] #loader .panel{background:var(--paper-2)}
+#loader .tv{font-size:46px;animation:tvBlink 1s steps(2) infinite}
+@keyframes tvBlink{50%{opacity:.35}}
+#loader .bar{width:min(280px,64vw);height:16px;border-radius:6px;background:var(--paper-2);border:var(--line-w) solid var(--ink);overflow:hidden;margin-top:14px}
+#loader .bar i{display:block;height:100%;width:0%;background:var(--pink);transition:width .2s}
+#loader .msg{font-family:var(--display);color:var(--ink);margin-top:12px;font-size:16px}
+@keyframes loaderAutoHide{to{opacity:0;visibility:hidden}}
+#loader{animation:loaderAutoHide .25s ease 1.2s forwards}
+/* ============ 顶部滚动进度条 ============ */
+#progress{position:fixed;top:0;left:0;height:5px;width:0%;background:var(--pink);z-index:210;border-right:3px solid var(--ink)}
+/* ============ 顶部导航 ============ */
+#topbar{position:sticky;top:0;z-index:200;background:var(--paper);border-bottom:var(--line-w) solid var(--ink)}
+#topbar .row{display:flex;align-items:center;gap:14px;height:66px}
+.logo{display:flex;align-items:center;gap:11px;user-select:none;cursor:pointer;flex:0 0 auto}
+.logo .tvbox{position:relative;width:44px;height:33px;background:var(--pink);border:var(--line-w) solid var(--ink);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--display);font-size:12px;letter-spacing:1px;box-shadow:3px 3px 0 var(--ink)}
+.logo .tvbox::before,.logo .tvbox::after{content:"";position:absolute;top:-9px;width:3px;height:11px;background:var(--ink);border-radius:2px}
+.logo .tvbox::before{left:10px;transform:rotate(-24deg)}
+.logo .tvbox::after{right:10px;transform:rotate(24deg)}
+.logo b{font-family:var(--display);font-weight:400;font-size:19px}
+.logo .sub{display:block;font-size:10.5px;color:var(--ink-soft);font-family:var(--body);letter-spacing:2px}
+/* 顶栏容器加宽：12 频道 + 搜索 + 按钮约 1330px 内容宽，原 1180px 必然溢出裁切 */
+#topbar .container{max-width:1480px}
+#topnav{display:flex;gap:1px;margin-left:8px;flex:0 1 auto;min-width:0}
+#topnav a{display:flex;align-items:center;padding:7px 9px;font-size:13px;font-weight:500;color:var(--ink-soft);transition:var(--t-fast);border-radius:6px;white-space:nowrap}
+#topnav a i{display:none} /* 顶栏 12 项去图标瘦身，防溢出 */
+#topnav a:hover{color:var(--ink);background:var(--paper-2)}
+#topnav a.on{color:var(--ink);font-weight:700;background:var(--gold);box-shadow:var(--shadow-hard-sm);border:var(--line-w) solid var(--ink)}
+.top-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.searchbox{display:flex;align-items:center;gap:8px;border:var(--line-w) solid var(--ink);background:#fff;border-radius:8px;padding:6px 12px;flex:0 1 216px;min-width:120px;box-shadow:var(--shadow-hard-sm);transition:var(--t-fast)}
+html[data-theme="dark"] .searchbox{background:var(--paper-2)}
+.searchbox:focus-within{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.searchbox i{width:15px;height:15px;color:var(--ink-soft);flex:0 0 auto}
+.searchbox input{border:none;outline:none;background:transparent;width:100%;font-size:13px}
+.searchbox .hint{font-size:11px;color:var(--ink-soft);border:1.5px solid var(--ink);border-radius:4px;padding:0 5px}
+.icon-btn{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;border:var(--line-w) solid var(--ink);background:#fff;box-shadow:var(--shadow-hard-sm);transition:var(--t-fast)}
+html[data-theme="dark"] .icon-btn{background:var(--paper-2)}
+.icon-btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.icon-btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.icon-btn i{width:18px;height:18px}
+#hamburger{display:none}
+#mobileMenu{display:none}
+/* 顶栏断点（12 频道实测约 1110px 内容宽）：
+   ≥1420 全导航 + 搜索框；1200–1419 全导航、无搜索框；≤1199 收进汉堡菜单 */
+@media(max-width:1419px){.searchbox{display:none}}
+@media(max-width:1199px){#topnav{display:none}#hamburger{display:flex}}
+/* 汉堡下拉在所有收起宽度可用（旧版展开样式只在 ≤760px 存在，761–1560px 点了没反应） */
+#mobileMenu.open{display:grid;grid-template-columns:repeat(3,1fr);gap:2px 22px;position:absolute;top:66px;left:0;right:0;background:var(--paper);border-bottom:var(--line-w) solid var(--ink);box-shadow:var(--shadow-hard);padding:14px 24px 20px;max-height:calc(100vh - 90px);overflow-y:auto}
+#mobileMenu a{display:flex;align-items:center;gap:10px;padding:11px 6px;border-bottom:1.5px dashed var(--ink-soft);font-weight:600}
+#mobileMenu a i{width:17px;height:17px}
+@media(min-width:761px){#mobileMenu a:nth-last-child(-n+3){border-bottom:none}}
+@media(max-width:760px){.logo .sub{display:none}
+  #mobileMenu.open{grid-template-columns:1fr}
+  #mobileMenu a:last-child{border-bottom:none}
+}
+/* ============ 楼层侧导航（方形节点） ============ */
+#floors{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:190;display:flex;flex-direction:column;gap:9px;background:var(--paper);border:var(--line-w) solid var(--ink);border-radius:10px;padding:12px 9px;box-shadow:var(--shadow-hard-sm)}
+#floors a{display:flex;align-items:center;gap:8px;justify-content:flex-end;padding:4px 6px;font-size:12px;font-weight:600;color:var(--ink-soft);transition:var(--t-fast);border-radius:5px}
+#floors a i.dot{width:9px;height:9px;background:var(--paper-2);border:1.5px solid var(--ink);flex:0 0 auto;transition:var(--t-fast)}
+#floors a span{display:none}
+#floors a:hover{color:var(--ink);background:var(--paper-2)}
+#floors a.on{color:var(--ink);font-weight:800}
+#floors a.on i.dot{background:var(--pink)}
+@media(min-width:1350px){#floors a span{display:inline}}
+@media(max-width:900px){#floors{display:none}}
+/* ============ 移动端底部导航 ============ */
+#bottomnav{position:fixed;left:0;right:0;bottom:0;z-index:195;display:none;background:var(--paper);border-top:var(--line-w) solid var(--ink);overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:env(safe-area-inset-bottom)}
+#bottomnav::-webkit-scrollbar{display:none}
+#bottomnav .inner{display:flex;gap:4px;padding:8px}
+#bottomnav a{flex:0 0 auto;padding:7px 13px;border-radius:7px;font-size:13px;font-weight:600;color:var(--ink-soft);white-space:nowrap;border:1.5px solid transparent;transition:var(--t-fast)}
+#bottomnav a i{width:14px;height:14px;vertical-align:-2px;margin-right:4px}
+#bottomnav a.on{background:var(--gold);color:var(--ink);border-color:var(--ink);font-weight:800}
+@media(max-width:900px){#bottomnav{display:block}}
+/* ============ 页脚 ============ */
+footer{margin-top:100px;background:var(--ink);color:#EDEAE2;padding:60px 0 120px;border-top:6px solid var(--pink)}
+html[data-theme="dark"] footer{background:#0B0B0E}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+@media(max-width:800px){.foot-grid{grid-template-columns:1fr}}
+footer h4{font-family:var(--display);font-size:17px;margin-bottom:16px;color:var(--gold);letter-spacing:1px}
+footer p,footer li{font-size:13.5px;color:#B9B6AC}
+footer ul{list-style:none}
+footer li{padding:5px 0;border-bottom:1px solid rgba(255,255,255,.09)}
+footer li a{display:flex;align-items:center;gap:8px;transition:var(--t-fast)}
+footer li a:hover{color:#fff;transform:translateX(4px)}
+footer li a i{width:14px;height:14px;color:var(--pink)}
+footer .foot-bottom{margin-top:44px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15);display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;font-size:12px;color:#8f8d84}
+/* ============ toast ============ */
+#toasts{position:fixed;left:50%;bottom:104px;transform:translateX(-50%);z-index:950;display:flex;flex-direction:column;gap:10px;align-items:center;pointer-events:none;width:max-content;max-width:92vw}
+.toast{background:var(--ink);color:var(--paper);border:2px solid var(--ink);box-shadow:4px 4px 0 var(--pink);padding:12px 24px;border-radius:8px;font-size:14px;font-weight:700;animation:toastIn .3s var(--ease-pop);max-width:92vw;text-align:center}
+html[data-theme="dark"] .toast{background:var(--paper-2);color:var(--ink);border-color:var(--ink);box-shadow:4px 4px 0 var(--pink)}
+@keyframes toastIn{from{opacity:0;transform:translateY(14px) scale(.92)}}
+.toast.out{opacity:0;transform:translateY(-10px);transition:.3s}
+body.wobble{animation:wobble .5s}
+@keyframes wobble{25%{transform:rotate(1.2deg)}50%{transform:rotate(-1.2deg)}75%{transform:rotate(.6deg)}}
+/* 自定义光标（桌面端） */
+#cursor{position:fixed;z-index:1000;width:16px;height:16px;border:2px solid var(--ink);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:width .15s,height .15s,background .15s;display:none}
+#cursor.hot{width:30px;height:30px;background:var(--gold)}
+@media(hover:hover) and (pointer:fine){#cursor{display:block}}
+@media (prefers-reduced-motion: reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* ============ Lucide 图标尺寸镜像 ============
+   lucide.createIcons() 会把 <i data-lucide> 替换为 <svg class="lucide">，
+   因此所有针对 <i> 的尺寸规则需为 <svg> 提供镜像。 */
+svg.lucide{flex:0 0 auto;vertical-align:-.15em;stroke-width:2.2}
+#topnav a svg{display:none} /* 与 i 镜像：lucide 替换后同样隐藏 */
+#topnav a.on svg{stroke:var(--ink)}
+.icon-btn svg{width:18px;height:18px}
+#mobileMenu a svg{width:17px;height:17px}
+#bottomnav a svg{width:14px;height:14px}
+footer li a svg{width:14px;height:14px}
+.searchbox svg{width:15px;height:15px}
+.btn svg{width:17px;height:17px}
+.kicker svg{width:14px;height:14px}
+.page-hero .crumbs svg{width:14px;height:14px}
+.page-hero h1 svg.lucide{width:.85em;height:.85em;vertical-align:-.08em;margin-right:6px}
+.dir-card svg{width:30px;height:30px}
+.dict-search svg{width:16px;height:16px}
+.dict-search input+.hint{margin-left:auto}
+.class-card .ico svg{width:26px;height:26px}
+.rank-panel h3 svg{width:19px;height:19px}
+.widget h3>svg{width:22px;height:22px}
+
+/* ---- 触屏优化 + 窄屏顶栏 ---- */
+button{touch-action:manipulation}
+@media(max-width:620px){
+  #topbar .top-right .btn-primary{display:none}
+  .logo b{font-size:15.5px}
+  .logo .tvbox{width:38px;height:28px;font-size:10px}
+  #topbar .container{padding:0 14px}
+}
+
+/* ============ fx.js 动感层 ============ */
+/* 滚动渐入：仅 fx-armed（JS 运行且非降级）时生效，否则内容恒可见 */
+.fx-armed .fx-rv{opacity:0;transform:translateY(22px) scale(.97);transition:opacity .5s ease,transform .55s cubic-bezier(.2,.8,.3,1)}
+.fx-armed .fx-rv.fx-in{opacity:1;transform:none}
+/* 波纹 */
+.fx-ripple{position:absolute;border-radius:50%;border:2.5px solid var(--ink);background:rgba(23,23,26,.06);pointer-events:none;animation:fxRipple .45s ease-out forwards;transform:scale(.25);opacity:.9}
+html[data-theme="dark"] .fx-ripple{border-color:var(--paper)}
+@keyframes fxRipple{to{transform:scale(1);opacity:0}}
+/* 页面擦除转场 */
+.fx-wipe{position:fixed;inset:0;z-index:1500;background:var(--pink);border-top:6px solid var(--ink);transform:translateY(101%);transition:transform .24s cubic-bezier(.5,0,.8,.4);pointer-events:none}
+.fx-wipe::after{content:"下次一定回来逛 ♂";position:absolute;left:50%;bottom:12%;transform:translateX(-50%);font-family:var(--display);font-size:17px;color:#fff;opacity:0;transition:opacity .2s .1s;white-space:nowrap}
+.fx-wipe.go{transform:translateY(0)}
+.fx-wipe.go::after{opacity:1}
+/* 顶栏滚动投影 */
+#topbar.scrolled{box-shadow:0 4px 0 rgba(23,23,26,.14)}
+/* 哲♂学厅光标拖尾 */
+.fx-trail{position:fixed;z-index:1400;pointer-events:none;font-size:15px;color:var(--pink);animation:fxTrail .9s ease-out forwards;transform:translate(-50%,-50%)}
+@keyframes fxTrail{to{transform:translate(-50%,-260%);opacity:0;rotate:-24deg}}
+@media (prefers-reduced-motion: reduce){.fx-ripple,.fx-trail{display:none}.fx-wipe{display:none}.fx-armed .fx-rv{opacity:1;transform:none;transition:none}}
+/* ============ components.css · Pop 组件体系 ============ */
+.btn{display:inline-flex;align-items:center;gap:9px;padding:13px 26px;border-radius:9px;font-weight:800;font-size:15px;transition:transform var(--t-fast) var(--ease-pop),box-shadow var(--t-fast);border:var(--line-w) solid var(--ink);background:#fff;box-shadow:var(--shadow-hard);color:var(--ink)}
+.btn i{width:17px;height:17px}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
+.btn:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.btn-primary{background:var(--pink);color:#fff}
+.btn-blue{background:var(--blue);color:#fff}
+.btn-gold{background:var(--gold)}
+.btn-ghost{background:transparent}
+.btn-sm{padding:9px 16px;font-size:13px;box-shadow:var(--shadow-hard-sm)}
+.btn-sm:hover{box-shadow:6px 6px 0 var(--ink)}
+/* 区块头：大字报式 + 编号 */
+.sec{padding:88px 0 36px}
+.sec-head{margin-bottom:38px;position:relative}
+.kicker{display:inline-flex;align-items:center;gap:9px;font-size:12.5px;font-weight:800;letter-spacing:3px;color:var(--ink);background:var(--gold);border:var(--line-w) solid var(--ink);padding:5px 15px;border-radius:6px;margin-bottom:16px;box-shadow:var(--shadow-hard-sm)}
+.kicker i{width:14px;height:14px}
+.sec-head h2{font-family:var(--display);font-weight:400;font-size:clamp(30px,4.6vw,46px);letter-spacing:2px;line-height:1.25}
+.sec-head h2 em{font-style:normal;color:var(--pink);text-decoration:underline wavy 3px;text-underline-offset:10px;text-decoration-color:var(--blue)}
+.sec-head p{color:var(--ink-soft);margin-top:14px;max-width:620px}
+.sec-no{position:absolute;right:0;top:-8px;font-family:var(--display);font-size:clamp(60px,9vw,110px);line-height:1;color:transparent;-webkit-text-stroke:2px var(--ink);opacity:.18;user-select:none}
+/* 子页横幅：斜切大字报 */
+.page-hero{background:var(--paper-2);border-bottom:var(--line-w) solid var(--ink);padding:56px 0 44px;position:relative;overflow:hidden}
+.page-hero::after{content:"";position:absolute;right:-70px;top:-70px;width:240px;height:240px;background:var(--pink);border:var(--line-w) solid var(--ink);border-radius:24px;transform:rotate(18deg);opacity:.9}
+html[data-theme="dark"] .page-hero::after{opacity:.35}
+.page-hero .container{position:relative;z-index:2}
+.page-hero .crumbs{font-size:13px;font-weight:600;color:var(--ink-soft);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.page-hero .crumbs i{width:14px;height:14px}
+.page-hero .crumbs a:hover{color:var(--pink);text-decoration:underline}
+.page-hero h1{font-family:var(--display);font-weight:400;font-size:clamp(32px,5.2vw,54px);letter-spacing:2px}
+.page-hero h1 em{font-style:normal;color:var(--paper);background:var(--pink);border:var(--line-w) solid var(--ink);padding:0 16px;border-radius:8px;box-shadow:var(--shadow-hard);display:inline-block;transform:rotate(-1.5deg)}
+.page-hero p.lead{color:var(--ink-soft);margin-top:18px;max-width:640px}
+/* 标签体系（方角） */
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chip{padding:8px 16px;border-radius:7px;font-size:13px;font-weight:700;background:#fff;border:var(--line-w) solid var(--ink);color:var(--ink-soft);transition:var(--t-fast)}
+html[data-theme="dark"] .chip{background:var(--paper-2)}
+.chip:hover{color:var(--ink);transform:translate(-2px,-2px);box-shadow:var(--shadow-hard-sm)}
+.chip.on{background:var(--ink);color:var(--paper);box-shadow:4px 4px 0 var(--pink)}
+.tag{font-size:11.5px;padding:3px 10px;border-radius:5px;background:var(--blue-soft);border:1.5px solid var(--blue);color:var(--ink);font-weight:700}
+.tag.year{background:var(--pink-soft);border-color:var(--pink)}
+.heat-pill{flex:0 0 auto;font-size:11.5px;font-weight:800;color:var(--ink);background:var(--gold);border:1.5px solid var(--ink);border-radius:6px;padding:3px 10px;white-space:nowrap}
+/* ============ pages.css · 各展厅（Pop Editorial） ============ */
+/* ---- 首页 hero ---- */
+#top{position:relative;overflow:hidden;border-bottom:var(--line-w) solid var(--ink);background:var(--paper-2)}
+.pop-shape{position:absolute;border:var(--line-w) solid var(--ink);z-index:0}
+.ps1{width:300px;height:300px;border-radius:28px;background:var(--pink-soft);top:-90px;left:-70px;transform:rotate(14deg)}
+.ps2{width:230px;height:230px;border-radius:22px;background:var(--blue-soft);bottom:-70px;right:6%;transform:rotate(-11deg)}
+.ps3{width:120px;height:120px;border-radius:16px;background:var(--gold);top:16%;right:24%;transform:rotate(22deg);opacity:.85}
+#heroCanvas{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+.hero-inner{position:relative;z-index:2;padding:88px 24px 74px;max-width:1180px;margin:0 auto}
+.hero-badges{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:28px}
+.hbadge{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:800;padding:7px 16px;background:#fff;border:var(--line-w) solid var(--ink);border-radius:8px;box-shadow:var(--shadow-hard-sm)}
+.hbadge i{width:15px;height:15px}
+.hbadge.pink{background:var(--pink);color:#fff}
+.hbadge.gold{background:var(--gold)}
+.hbadge:nth-child(1){transform:rotate(-2deg)}
+.hbadge:nth-child(2){transform:rotate(1.6deg)}
+.hbadge:nth-child(3){transform:rotate(-1deg)}
+.hero-title{font-family:var(--display);font-weight:400;font-size:clamp(40px,7.4vw,84px);line-height:1.14;letter-spacing:2px;max-width:900px}
+.hero-title .hl{color:var(--paper);background:var(--ink);padding:0 20px 4px;border-radius:10px;box-shadow:8px 8px 0 var(--pink);display:inline-block;transform:rotate(-1.2deg);margin-top:8px}
+.hero-sub{margin:26px 0 32px;font-size:clamp(15px,2vw,18px);color:var(--ink-soft);max-width:620px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.dm-send{display:flex;gap:12px;margin-top:32px;max-width:480px}
+.dm-send input{flex:1;border:var(--line-w) solid var(--ink);border-radius:9px;padding:13px 20px;background:#fff;outline:none;box-shadow:inset 3px 3px 0 rgba(23,23,26,.08);transition:var(--t-fast)}
+html[data-theme="dark"] .dm-send input{background:var(--paper-2)}
+.dm-send input:focus{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--blue)}
+.dm-send button{border-radius:9px;padding:13px 24px;background:var(--blue);color:#fff;font-weight:800;border:var(--line-w) solid var(--ink);box-shadow:var(--shadow-hard-sm);transition:var(--t-fast)}
+.dm-send button:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.dm-note{font-size:12.5px;color:var(--ink-soft);margin-top:10px}
+.hero-stats{display:flex;flex-wrap:wrap;gap:0;margin-top:46px;border:var(--line-w) solid var(--ink);border-radius:12px;background:#fff;box-shadow:var(--shadow-hard);width:fit-content;overflow:hidden}
+html[data-theme="dark"] .hero-stats{background:var(--paper-2)}
+.stat{padding:18px 30px;border-right:var(--line-w) solid var(--ink)}
+.stat:last-child{border-right:none}
+.stat b{font-family:var(--display);font-weight:400;font-size:26px;color:var(--pink);font-variant-numeric:tabular-nums}
+.stat span{display:block;font-size:12px;color:var(--ink-soft)}
+/* ---- 弹幕横幅 ---- */
+.marquee{overflow:hidden;background:var(--pink);color:#fff;padding:13px 0;transform:rotate(-1.2deg) scale(1.03);margin:-18px 0 6px;border-top:var(--line-w) solid var(--ink);border-bottom:var(--line-w) solid var(--ink);position:relative;z-index:3}
+.marquee-track{display:flex;gap:36px;width:max-content;animation:scrollX 38s linear infinite;font-family:var(--display);font-size:16px;letter-spacing:3px;white-space:nowrap}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@keyframes scrollX{to{transform:translateX(-50%)}}
+/* ---- 展厅目录 ---- */
+.dir-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:20px}
+.dir-card{display:flex;flex-direction:column;gap:8px;background:#fff;border:var(--line-w) solid var(--ink);border-radius:12px;padding:22px;box-shadow:var(--shadow-hard);transition:transform var(--t-fast) var(--ease-pop),box-shadow var(--t-fast)}
+html[data-theme="dark"] .dir-card{background:var(--paper-2)}
+.dir-card:hover{transform:translate(-4px,-4px) rotate(-.6deg);box-shadow:10px 10px 0 var(--pink)}
+.dir-card i{width:30px;height:30px;color:var(--pink)}
+.dir-card b{font-size:17px}
+.dir-card span{font-size:12.5px;color:var(--ink-soft)}
+.dir-card .go{margin-top:auto;font-size:12.5px;font-weight:800;color:var(--blue)}
+/* ---- 视频卡 ---- */
+.vstrip{display:grid;grid-template-columns:repeat(auto-fit,minmax(235px,1fr));gap:22px;margin-top:10px}
+.vcard{background:#fff;border:var(--line-w) solid var(--ink);border-radius:12px;overflow:hidden;box-shadow:var(--shadow-hard);transition:transform var(--t-fast) var(--ease-pop),box-shadow var(--t-fast);cursor:pointer;text-align:left}
+html[data-theme="dark"] .vcard{background:var(--paper-2)}
+.vcard:hover{transform:translate(-4px,-4px) rotate(.5deg);box-shadow:10px 10px 0 var(--ink)}
+.vthumb{position:relative;aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;font-size:44px;border-bottom:var(--line-w) solid var(--ink)}
+.vthumb .play{width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.25);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;font-size:18px;border:2.5px solid #fff;color:#fff}
+.vthumb .dur{position:absolute;right:8px;bottom:8px;background:var(--ink);color:#fff;font-size:11px;padding:2px 9px;border-radius:5px;font-weight:700}
+.vmeta{padding:14px 16px 16px}
+.vmeta h3{font-size:14.5px;font-weight:700;line-height:1.5;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.vmeta .row{display:flex;justify-content:space-between;margin-top:10px;font-size:12px;color:var(--ink-soft);font-weight:600}
+/* ---- 梗词典 ---- */
+.dict-tools{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:26px}
+.dict-search{flex:1;min-width:230px;max-width:430px;display:flex;align-items:center;gap:9px;border:var(--line-w) solid var(--ink);background:#fff;border-radius:9px;padding:11px 17px;box-shadow:var(--shadow-hard-sm)}
+html[data-theme="dark"] .dict-search{background:var(--paper-2)}
+.dict-search i{width:16px;height:16px;color:var(--ink-soft);flex:0 0 auto}
+.dict-search input{flex:1;border:none;outline:none;background:transparent;min-width:0}
+.dict-count{font-size:13px;color:var(--ink-soft);margin-left:auto;font-weight:700;font-variant-numeric:tabular-nums}
+.dict-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(258px,1fr));gap:22px}
+.mcard{background:#fff;border:var(--line-w) solid var(--ink);border-radius:12px;padding:20px 20px 18px;display:flex;flex-direction:column;gap:11px;box-shadow:var(--shadow-hard);transition:transform var(--t-fast) var(--ease-pop),box-shadow var(--t-fast);position:relative}
+html[data-theme="dark"] .mcard{background:var(--paper-2)}
+.mcard:hover{transform:translate(-4px,-4px);box-shadow:10px 10px 0 var(--pink)}
+.mcard.flash{animation:flash .9s ease 2}
+@keyframes flash{50%{box-shadow:8px 8px 0 var(--gold)}}
+.mcard .top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px}
+.mcard h3{font-family:var(--display);font-weight:400;font-size:20px;line-height:1.3}
+.mcard .tags{display:flex;gap:7px;flex-wrap:wrap}
+.mcard p{font-size:13.5px;color:var(--ink-soft);flex:1}
+.mcard .quote{font-size:12.5px;background:var(--paper-2);border:1.5px dashed var(--ink-soft);border-radius:8px;padding:9px 13px}
+.mcard .quote b{color:var(--pink);font-size:11px;margin-right:6px}
+.mcard .bar{height:8px;border-radius:4px;background:var(--paper-2);border:1.5px solid var(--ink);overflow:hidden}
+.mcard .bar i{display:block;height:100%;background:var(--gold)}
+.dict-empty{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--ink-soft);border:2px dashed var(--ink-soft);border-radius:12px}
+.dict-empty .big{font-size:44px;margin-bottom:12px}
+/* ---- 梗热榜 ---- */
+.rank-wrap{display:grid;grid-template-columns:1.6fr 1fr;gap:26px;align-items:start}
+@media(max-width:900px){.rank-wrap{grid-template-columns:1fr}}
+.rank-list{background:#fff;border:var(--line-w) solid var(--ink);border-radius:14px;box-shadow:var(--shadow-hard);overflow:hidden}
+html[data-theme="dark"] .rank-list{background:var(--paper-2)}
+.rank-row{display:flex;align-items:center;gap:15px;padding:15px 20px;border-bottom:1.5px solid var(--paper-2);transition:var(--t-fast)}
+.rank-row:last-child{border-bottom:none}
+.rank-row:hover{background:var(--paper-2)}
+.rank-no{width:36px;height:36px;flex:0 0 auto;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:17px;background:var(--paper);border:2px solid var(--ink);color:var(--ink-soft)}
+.rank-no.r1{background:var(--pink);color:#fff}
+.rank-no.r2{background:var(--gold)}
+.rank-no.r3{background:var(--blue);color:#fff}
+.rank-row .info{flex:1;min-width:0}
+.rank-row .info b{font-size:15px}
+.rank-row .info .cat{font-size:11.5px;color:var(--ink-soft);margin-left:8px}
+.rank-heat{text-align:right;font-variant-numeric:tabular-nums}
+.rank-heat b{font-size:15px;color:var(--pink)}
+.rank-heat .trend{display:block;font-size:11.5px;font-weight:700}
+.trend.up{color:var(--green)}
+.trend.down{color:var(--ink-soft)}
+.rank-panel{position:sticky;top:92px;background:var(--paper-2);border:2.5px dashed var(--ink);border-radius:14px;padding:26px}
+.rank-panel h3{font-family:var(--display);font-weight:400;font-size:20px;margin-bottom:12px;display:flex;align-items:center;gap:9px}
+.rank-panel h3 i{width:19px;height:19px;color:var(--pink)}
+.rank-panel p{font-size:14px;color:var(--ink-soft)}
+.rank-panel .note{min-height:74px;font-size:14.5px;color:var(--ink);margin:10px 0 18px}
+.rank-panel .clock{font-size:12.5px;color:var(--pink);font-weight:800;font-variant-numeric:tabular-nums;letter-spacing:1px}
+/* ---- 弹幕教室 ---- */
+.class-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(285px,1fr));gap:22px}
+.class-card{background:#fff;border:var(--line-w) solid var(--ink);border-radius:12px;padding:24px;box-shadow:var(--shadow-hard);transition:transform var(--t-fast) var(--ease-pop),box-shadow var(--t-fast);position:relative;overflow:hidden}
+html[data-theme="dark"] .class-card{background:var(--paper-2)}
+.class-card::after{content:attr(data-no);position:absolute;right:12px;top:6px;font-family:var(--display);font-size:44px;color:transparent;-webkit-text-stroke:1.5px var(--ink);opacity:.16}
+.class-card:hover{transform:translate(-4px,-4px);box-shadow:10px 10px 0 var(--blue)}
+.class-card .ico{width:52px;height:52px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;background:var(--gold);border:2px solid var(--ink)}
+.class-card .ico i{width:26px;height:26px}
+.class-card h3{font-size:17px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.class-card h3 small{color:var(--blue);font-weight:700;font-size:12px;border:1.5px solid var(--blue);border-radius:5px;padding:1px 8px}
+.class-card p{font-size:13.5px;color:var(--ink-soft)}
+.pbar{margin-top:16px;height:28px;border-radius:7px;background:var(--paper);border:2px solid var(--ink);position:relative;overflow:hidden}
+.pbar i{position:absolute;top:0;bottom:0;left:23%;width:34%;background:var(--blue-soft);border-left:2.5px solid var(--blue)}
+.pbar span{position:absolute;left:8px;top:50%;transform:translateY(-50%);font-size:11px;color:var(--ink-soft);font-weight:700}
+.pbar b{position:absolute;left:23%;top:50%;transform:translate(-50%,-50%);font-size:11px;color:var(--ink);background:#fff;border:1.5px solid var(--ink);padding:0 7px;border-radius:5px;white-space:nowrap}
+.years{margin-top:15px;display:flex;flex-wrap:wrap;gap:7px}
+.years span{font-size:11.5px;font-weight:800;padding:3px 11px;border-radius:5px;background:var(--gold);border:1.5px solid var(--ink);color:var(--ink)}
+/* ---- 名场面翻牌 ---- */
+.quote-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(242px,1fr));gap:20px}
+.flip{perspective:1100px;height:212px;cursor:pointer}
+.flip-inner{position:relative;width:100%;height:100%;transition:transform .6s cubic-bezier(.4,.2,.2,1);transform-style:preserve-3d}
+.flip.on .flip-inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:12px;padding:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:10px}
+.face.front{background:#fff;border:var(--line-w) solid var(--ink);box-shadow:var(--shadow-hard)}
+html[data-theme="dark"] .face.front{background:var(--paper-2)}
+.face.front .q{font-family:var(--display);font-weight:400;font-size:18px;line-height:1.5}
+.face.front .tip{font-size:11.5px;color:var(--ink-soft);font-weight:700;border:1.5px dashed var(--ink-soft);border-radius:6px;padding:2px 12px}
+.face.back{background:var(--pink);border:var(--line-w) solid var(--ink);color:#fff;transform:rotateY(180deg);box-shadow:var(--shadow-hard)}
+.face.back .src{font-size:13.5px;font-weight:800;letter-spacing:1px}
+.face.back .yr{font-size:11px;background:var(--ink);padding:2px 12px;border-radius:5px;font-weight:800}
+.face.back p{font-size:12.5px;line-height:1.6;opacity:.95}
+/* ---- 梗图工厂 ---- */
+.factory{display:grid;grid-template-columns:minmax(300px,1fr) minmax(300px,1fr);gap:32px;align-items:start}
+@media(max-width:900px){.factory{grid-template-columns:1fr}}
+.gen-controls{background:#fff;border:var(--line-w) solid var(--ink);border-radius:14px;padding:26px;box-shadow:var(--shadow-hard);display:flex;flex-direction:column;gap:18px}
+html[data-theme="dark"] .gen-controls{background:var(--paper-2)}
+.gen-controls label{font-size:13px;font-weight:800;color:var(--ink-soft);display:block;margin-bottom:7px;letter-spacing:1px}
+.gen-controls input[type="text"]{width:100%;border:var(--line-w) solid var(--ink);border-radius:9px;padding:11px 15px;outline:none;background:var(--paper)}
+html[data-theme="dark"] .gen-controls input[type="text"]{background:var(--paper)}
+.gen-controls input[type="text"]:focus{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--blue)}
+.tpl-row{display:flex;gap:10px}
+.tpl{flex:1;height:46px;border-radius:9px;border:var(--line-w) solid var(--ink);transition:var(--t-fast);position:relative;overflow:hidden;box-shadow:3px 3px 0 var(--ink)}
+.tpl.on{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink);outline:2.5px solid var(--paper);outline-offset:-6px}
+.tpl span{position:absolute;inset:auto 0 2px 0;text-align:center;font-size:10.5px;font-weight:800;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.6)}
+input[type="range"]{width:100%;accent-color:var(--pink)}
+.gen-controls select{border:var(--line-w) solid var(--ink);border-radius:9px;padding:10px 14px;background:var(--paper);outline:none}
+.gen-row{display:flex;gap:12px;flex-wrap:wrap}
+.gen-preview{background:#fff;border:var(--line-w) solid var(--ink);border-radius:14px;padding:20px;box-shadow:var(--shadow-hard);text-align:center}
+html[data-theme="dark"] .gen-preview{background:var(--paper-2)}
+#genCanvas{width:100%;max-width:420px;border-radius:10px;border:var(--line-w) solid var(--ink);margin:0 auto;background:#eee}
+/* ---- 梗力测试 ---- */
+.quiz-box{max-width:640px;margin:0 auto;background:#fff;border:var(--line-w) solid var(--ink);border-radius:16px;padding:32px;box-shadow:10px 10px 0 var(--pink)}
+html[data-theme="dark"] .quiz-box{background:var(--paper-2)}
+.quiz-top{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--ink-soft);margin-bottom:14px;font-weight:700}
+.quiz-bar{height:10px;border-radius:5px;background:var(--paper-2);border:2px solid var(--ink);overflow:hidden;margin-bottom:24px}
+.quiz-bar i{display:block;height:100%;width:0;background:var(--gold);transition:width .4s}
+.quiz-q{font-family:var(--display);font-weight:400;font-size:21px;line-height:1.55;margin-bottom:20px}
+.quiz-opts{display:flex;flex-direction:column;gap:13px}
+.opt{text-align:left;padding:15px 19px;border-radius:10px;border:var(--line-w) solid var(--ink);background:var(--paper);font-size:15px;font-weight:700;transition:var(--t-fast)}
+.opt:not(:disabled):hover{transform:translateX(6px);background:#fff;box-shadow:var(--shadow-hard-sm)}
+.opt.correct{border-color:var(--green);background:rgba(42,200,100,.14);color:#177a41}
+.opt.wrong{border-color:#e5484d;background:rgba(229,72,77,.10);color:#b4282d}
+.opt:disabled{cursor:default}
+.quiz-fact{margin-top:18px;font-size:13.5px;padding:13px 17px;border-radius:9px;background:var(--blue-soft);border:1.5px solid var(--blue);display:none}
+.quiz-fact.show{display:block}
+.quiz-next{margin-top:20px;display:none;width:100%;justify-content:center}
+.quiz-next.show{display:inline-flex}
+.quiz-result{text-align:center;padding:20px 0}
+.quiz-result .medal{font-size:58px}
+.quiz-result h3{font-family:var(--display);font-weight:400;font-size:28px;color:var(--pink);margin:10px 0 6px}
+.quiz-result p{color:var(--ink-soft);font-size:14.5px}
+/* ---- 三连现场 ---- */
+.sanlian-wrap{background:#fff;border:var(--line-w) solid var(--ink);border-radius:18px;padding:48px 26px;text-align:center;position:relative;overflow:hidden;box-shadow:var(--shadow-hard)}
+html[data-theme="dark"] .sanlian-wrap{background:var(--paper-2)}
+.sanlian-wrap::before{content:"SANLIAN LIVE";position:absolute;left:-30px;bottom:18px;font-family:var(--display);font-size:74px;letter-spacing:6px;color:transparent;-webkit-text-stroke:1.5px var(--ink);opacity:.1;pointer-events:none;transform:rotate(-4deg)}
+.sl-btns{display:flex;justify-content:center;gap:26px;flex-wrap:wrap;margin:30px 0 12px}
+.sl-btn{width:112px;height:112px;border-radius:14px;background:var(--paper);border:var(--line-w) solid var(--ink);box-shadow:var(--shadow-hard);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:13.5px;font-weight:800;color:var(--ink-soft);transition:transform var(--t-fast) var(--ease-pop),box-shadow var(--t-fast);user-select:none;-webkit-user-select:none;touch-action:manipulation}
+.sl-btn .em{font-size:32px;transition:.15s}
+.sl-btn:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
+.sl-btn:active{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--ink)}
+.sl-btn.bump{animation:bump .35s}
+@keyframes bump{40%{transform:scale(1.12) rotate(-2deg)}}
+.sl-btn b{font-variant-numeric:tabular-nums;color:var(--pink);font-size:16px}
+.sl-hint{font-size:12.5px;color:var(--ink-soft)}
+.flee-zone{position:relative;height:132px;margin-top:28px}
+#fleeBtn{position:absolute;left:50%;top:20px;transform:translateX(-50%);padding:13px 30px;border-radius:9px;background:#fff;border:2.5px dashed var(--ink-soft);color:var(--ink-soft);font-weight:800;font-size:15px;transition:left .28s cubic-bezier(.3,1.4,.5,1),top .28s cubic-bezier(.3,1.4,.5,1),background .3s,color .3s,border-color .3s}
+html[data-theme="dark"] #fleeBtn{background:var(--paper)}
+#fleeBtn:hover{border-color:var(--pink);color:var(--pink)}
+#fleeBtn.surrender{background:var(--gold);border:var(--line-w) solid var(--ink);color:var(--ink);border-style:solid;box-shadow:var(--shadow-hard-sm)}
+
+.quiz-fact .why{color:var(--blue);margin-right:6px}
+/* ============ timeline.css · 编年史长卷（Pop） ============ */
+.stl-stats{display:flex;justify-content:center;gap:0;flex-wrap:wrap;margin:6px 0 30px;border:var(--line-w) solid var(--ink);border-radius:12px;background:#fff;box-shadow:var(--shadow-hard);width:fit-content;margin-left:auto;margin-right:auto;overflow:hidden}
+html[data-theme="dark"] .stl-stats{background:var(--paper-2)}
+.stl-stats .st{padding:16px 30px;border-right:var(--line-w) solid var(--ink)}
+.stl-stats .st:last-child{border-right:none}
+.stl-stats .st b{font-family:var(--display);font-weight:400;font-size:28px;color:var(--pink);font-variant-numeric:tabular-nums}
+.stl-stats .st span{display:block;font-size:12px;color:var(--ink-soft)}
+.stl-chapter-nav{position:sticky;top:76px;z-index:40;width:fit-content;margin:0 auto 12px;display:flex;gap:7px;flex-wrap:wrap;justify-content:center;padding:8px;border-radius:10px;background:var(--paper);border:var(--line-w) solid var(--ink);box-shadow:var(--shadow-hard-sm)}
+.stl-chapter-nav a{padding:7px 15px;border-radius:7px;font-size:13px;font-weight:800;color:var(--ink-soft);transition:var(--t-fast);white-space:nowrap;border:1.5px solid transparent}
+.stl-chapter-nav a:hover{color:var(--ink);background:var(--paper-2)}
+.stl-chapter-nav a.on{background:var(--gold);color:var(--ink);border-color:var(--ink);box-shadow:3px 3px 0 var(--ink)}
+.stl{position:relative;max-width:960px;margin:0 auto;padding:26px 0 70px}
+.stl-spine{position:absolute;left:50%;top:0;bottom:0;width:6px;transform:translateX(-50%);background:var(--paper-2);border:1.5px solid var(--ink);border-radius:99px}
+.stl-spine i{position:absolute;top:0;left:0;width:100%;height:0%;border-radius:99px;background:linear-gradient(180deg,var(--gold),var(--gold) 26%,var(--pink) 30%,var(--pink) 52%,var(--blue) 56%,var(--blue) 78%,var(--green) 82%,var(--green) 100%)}
+.stl-tv{position:absolute;left:50%;top:0;transform:translate(-50%,-50%);font-size:27px;z-index:3;pointer-events:none}
+.stl-era{position:relative;z-index:2;width:fit-content;margin:46px auto;text-align:center;background:var(--gold);border:var(--line-w) solid var(--ink);border-radius:10px;padding:10px 30px;box-shadow:var(--shadow-hard-sm)}
+.stl-era b{font-family:var(--display);font-weight:400;font-size:21px;letter-spacing:2px}
+.stl-era span{display:block;font-size:12px;color:var(--ink-soft);letter-spacing:3px;margin-top:2px;font-weight:700}
+.stl-item{position:relative;display:grid;grid-template-columns:1fr 96px 1fr;align-items:center;min-height:120px;padding:10px 0}
+.stl-node{grid-column:2;justify-self:center;width:20px;height:20px;border-radius:50%;background:var(--paper);border:5px solid var(--ink);z-index:2}
+.stl-item.g .stl-node{border-color:var(--gold)} .stl-item.p .stl-node{border-color:var(--pink)}
+.stl-item.b .stl-node{border-color:var(--blue)} .stl-item.gr .stl-node{border-color:var(--green)}
+.stl-card{position:relative;background:#fff;border:var(--line-w) solid var(--ink);border-radius:12px;padding:20px 24px;box-shadow:var(--shadow-hard)}
+html[data-theme="dark"] .stl-card{background:var(--paper-2)}
+.stl-item.L .stl-card{grid-column:1;justify-self:end;text-align:right;max-width:440px}
+.stl-item.R .stl-card{grid-column:3;justify-self:start;max-width:440px}
+.stl-item.L .stl-card::after,.stl-item.R .stl-card::before{content:"";position:absolute;top:50%;height:2.5px;background:var(--ink)}
+.stl-item.L .stl-card::after{right:-64px;width:64px}
+.stl-item.R .stl-card::before{left:-64px;width:64px}
+.stl-yr{font-family:var(--display);font-weight:400;font-size:34px;line-height:1.2}
+.stl-note{font-size:13.5px;color:var(--ink-soft);margin-top:2px}
+.stl-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}
+.stl-item.L .stl-chips{justify-content:flex-end}
+.stl-chips span{font-size:12.5px;font-weight:700;border-radius:6px;padding:4px 12px;border:1.5px solid;transition:transform var(--t-fast)}
+.stl-chips span:hover{transform:translateY(-2px)!important}
+.stl-item.g .stl-chips span{background:rgba(255,197,51,.14);border-color:var(--gold);color:#7a5200}
+.stl-item.p .stl-chips span{background:var(--pink-soft);border-color:var(--pink);color:#a02650}
+.stl-item.b .stl-chips span{background:var(--blue-soft);border-color:var(--blue);color:#00688a}
+.stl-item.gr .stl-chips span{background:rgba(42,200,100,.12);border-color:var(--green);color:#177a41}
+html[data-theme="dark"] .stl-item.g .stl-chips span{color:var(--gold)}
+html[data-theme="dark"] .stl-item.p .stl-chips span{color:var(--pink)}
+html[data-theme="dark"] .stl-item.b .stl-chips span{color:var(--blue)}
+html[data-theme="dark"] .stl-item.gr .stl-chips span{color:var(--green)}
+.stl-badge{display:inline-block;margin-top:11px;font-size:12px;font-weight:800;color:var(--ink);background:var(--gold);border:2px solid var(--ink);border-radius:7px;padding:4px 14px;box-shadow:3px 3px 0 var(--ink)}
+.cake{font-size:24px;margin-right:6px}
+.stl-item.mega .stl-card{border-width:3px;box-shadow:8px 8px 0 var(--ink)}
+.stl-item.future .stl-card{background:#FFF9E8;border:2.5px dashed var(--gold)!important;box-shadow:8px 8px 0 rgba(255,197,51,.4)}
+html[data-theme="dark"] .stl-item.future .stl-card{background:#221c0e}
+.stl-item.future .stl-chips span{background:#fff;border:1.5px dashed var(--gold);color:#7a5200}
+.stl-chips span.newchip{background:var(--gold)!important;border:2px solid var(--ink)!important;color:var(--ink)!important;box-shadow:3px 3px 0 var(--ink)}
+.y2026-add{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap;justify-content:flex-end}
+.y2026-add input{flex:1;min-width:180px;border:var(--line-w) solid var(--ink);border-radius:9px;padding:9px 18px;background:var(--paper);outline:none}
+.y2026-add input:focus{border-color:var(--pink)}
+/* 滚动驱动入场：纯位移/缩放，永不降低透明度 */
+@supports (animation-timeline: view()){
+  .stl-item .stl-card{--sx:30px}
+  .stl-item.L .stl-card{--sx:-30px}
+  .stl-item .stl-card{animation:stlIn linear both;animation-timeline:view();animation-range:entry 0% entry 60%}
+  .stl-node{animation:stlPop linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
+  .stl-era{animation:stlUp linear both;animation-timeline:view();animation-range:entry 0% entry 85%}
+  .stl-badge{animation:stlPop linear both;animation-timeline:view();animation-range:entry 25% entry 80%}
+  .stl-chips span{animation:stlChip linear both;animation-timeline:view()}
+  .stl-chips span:nth-child(1){animation-range:entry 5% entry 50%}
+  .stl-chips span:nth-child(2){animation-range:entry 10% entry 55%}
+  .stl-chips span:nth-child(3){animation-range:entry 15% entry 60%}
+  .stl-chips span:nth-child(4){animation-range:entry 20% entry 65%}
+  .stl-chips span:nth-child(5){animation-range:entry 25% entry 70%}
+  .stl-chips span:nth-child(6){animation-range:entry 30% entry 75%}
+  @keyframes stlIn{from{transform:translateX(var(--sx,0))}to{transform:none}}
+  @keyframes stlPop{from{transform:scale(.72)}to{transform:scale(1)}}
+  @keyframes stlUp{from{transform:translateY(18px)}to{transform:none}}
+  @keyframes stlChip{from{transform:translateY(8px) scale(.92)}to{transform:none}}
+}
+@media(max-width:760px){
+  .stl{padding:16px 0 50px}
+  .stl-spine{left:13px;transform:none}
+  .stl-tv{left:13px;font-size:20px}
+  .stl-item{grid-template-columns:28px 1fr;min-height:0;padding:12px 0}
+  .stl-node{grid-column:1;width:16px;height:16px;border-width:4px}
+  .stl-item.L .stl-card,.stl-item.R .stl-card{grid-column:2;justify-self:start;max-width:none;text-align:left}
+  .stl-item.L .stl-card::after,.stl-item.R .stl-card::before{display:none}
+  .stl-item.L .stl-chips{justify-content:flex-start}
+  .y2026-add{justify-content:flex-start}
+  .stl-era{margin:34px auto;padding:8px 22px}
+  .stl-chapter-nav{top:68px;max-width:calc(100vw - 32px)}
+  .stl-stats .st{padding:12px 20px}
+}
+
+</style>
+</head>
+<body data-page="history">
+<div id="loader"><div class="panel"><div class="tv">📺</div><div class="bar"><i id="loadBar"></i></div><div class="msg" id="loadMsg">开馆中…</div></div></div>
+<main>
+<section class="page-hero"><div class="container">
+  <div class="crumbs"><a href="index.html">🏠 首页</a> / 梗编年史</div>
+  <h1>🕰️ <em>梗编年史</em> · 2009 → 2026 滚动长卷</h1>
+  <p class="lead">慢慢往下滚——时间轴会跟着你生长，章节横幅与年度弹幕逐一点亮。看看你的冲浪史从哪一年开始。</p>
+</div></section>
+<section class="sec" style="padding-top:34px"><div class="container">
+  <div class="stl-stats" id="stlStats">
+    <div class="st"><b data-n="18">18</b><span>个年份节点</span></div>
+    <div class="st"><b data-n="60" data-suf="+">60+</b><span>条热梗收录</span></div>
+    <div class="st"><b data-n="5">5</b><span>个官方年度弹幕</span></div>
+    <div class="st"><b data-n="1">1</b><span>个 2026 等你书写</span></div>
+  </div>
+  <nav class="stl-chapter-nav" id="stlChapters" aria-label="编年史章节导航"><a href="#e1">2009-13 蛮荒</a><a href="#e2">2014-18 鬼畜</a><a href="#e3">2019-23 年度弹幕</a><a href="#e4">2024-26 抽象</a></nav>
+  <div class="stl" id="stl">
+    <div class="stl-spine" aria-hidden="true"><i id="stlFill"></i></div>
+    <div class="stl-tv" id="stlTv" aria-hidden="true">📺</div>
+    <div id="stlBody"><div class="stl-era" id="e1"><b>第一章 · 蛮荒欢乐时代</b><span>2009 - 2013 · 一切从沙雕开始</span></div><div class="stl-era" id="e2"><b>第二章 · 鬼畜黄金时代</b><span>2014 - 2018 · 洗脑神曲批量出厂</span></div><div class="stl-era" id="e3"><b>第三章 · 年度弹幕时代</b><span>2019 - 2023 · 官方盖章的快乐</span></div><div class="stl-era" id="e4"><b>第四章 · 抽象新声时代</b><span>2024 - 2026 · 精神状态领先版</span></div><div class="stl-item L g mega" data-y="2009"><span class="stl-node"></span><div class="stl-card"><div class="stl-yr">🎂2009</div><div class="stl-note">B 站上线，「小破站」正式启航，弹幕文化生根发芽。</div><div class="stl-chips"><span style="animation-range:entry 5% entry 45%">贾君鹏，你妈妈喊你回家吃饭</span><span style="animation-range:entry 10% entry 50%">金坷垃</span><span style="animation-range:entry 15% entry 55%">2333（猫扑移民）</span></div></div></div><div class="stl-item R g" data-y="2010"><span class="stl-node"></span><div class="stl-card"><div class="stl-yr">2010</div><div class="stl-note">「给力」登上人民日报头版，网络热梗完成官方认证首秀。</div><div class="stl-chips"><span style="animation-range:entry 5% entry 45%">给力</span><span style="animation-range:entry 10% entry 50%">神马都是浮云</span><span style="animation-range:entry 15% entry 55%">弹幕文化成型</span></div></div></div><div class="stl-item L g" data-y="2011"><span class="stl-node"></span><div class="stl-card"><div class="stl-yr">2011</div><div class="stl-note">全民开口就是网络体的一年。</div><div class="stl-chips"><span style="animation-range:entry 5% entry 45%">hold住</span><span style="animation-range:entry 10% entry 50%">伤不起</span><span style="animation-range:entry 15% entry 55%">有木有</span></div></div></div><div class="stl-item R g" data-y="2012"><span class="stl-node"></span><div class="stl-card"><div class="stl-yr">2012</div><div class="stl-note">影视剧集体供应热梗，铛铛铛风潮席卷全站。</div><div class="stl-chips"><span style="animation-range:entry 5% entry 45%">元芳，你怎么看</span><span style="animation-range:entry 10% entry 50%">江南Style</span><span style="animation-range:entry 15% entry 55%">甄嬛体</span></div></div></div><div class="stl-item L g" data-y="2013"><span class="stl-node"></span><div class="stl-card"><div class="stl-yr">2013</div><div class="stl-note">「前方高能」成为弹幕区预警雷达，集体观影礼仪萌芽。</div><div class="stl-chips"><span style="animation-range:entry 5% entry 45%">前方高能</span><span style="animation-range:entry 10% entry 50%">待我长发及腰</span><span style="animation-range:entry 15% entry 55%">人艰不拆</span><span style="animation-range:entry 20% entry 60%">土豪，我们做朋友吧</span></div></div></div><div class="stl-item R p" data-y="2014"><span class="stl-node"></span><div class="stl-card"><div class="stl-yr">2014</div><div class="stl-note">「真香」定律正式立项，人类终将与它共存。flag 从此有了归宿。</div><div class="stl-chips"><span style="animation-range:entry 5% entry 45%">真香</span><span style="animation-range:entry 10% entry 50%">有钱就是任性</span><span style="animation-range:entry 15% entry 55%">也是醉了</span></div></div></div><div class="stl-item L p" data-y="2015"><span class="stl-node"></span><div class="stl-card"><div class="stl-yr">2015</div><div class="stl-note">鬼畜区双神曲降临，雷总在 B 站从此有了歌声。</div><div class="stl-chips"><span style="animation-range:entry 5% entry 45%">Are you OK</span><span style="animation-range:entry 10% entry 50%">duang~</span><span style="animation-range:entry 15% entry 55%">世界那么大，我想去看看</span></div></div></div><div class="stl-item R p" data-y="2016"><span class="stl-node"></span><div class="stl-card"><div class="stl-yr">2016</div><div class="stl-note">情绪表达全面更新换代，蓝瘦成了新的难过单位。</div><div class="stl-chips"><span style="animation-range:entry 5% entry 45%">蓝瘦香菇</span><span style="animation-range:entry 10% entry 50%">洪荒之力</span><span style="animation-range:entry 15% entry 55%">友谊的小船说翻就翻</span></div></div></div><div class="stl-item L p" data-y="2017"><span class="stl-node"></span><div class="stl-card"><div class="stl-yr">2017</div><div class="stl-note">弹幕画风逐渐沙雕，铁铁们扎心又快乐。</div><div class="stl-chips"><span style="animation-range:entry 5% entry 45%">扎心了老铁</span><span style="animation-range:entry 10% entry 50%">皮皮虾我们走</span><span style="animation-range:entry 15% entry 55%">请开始你的表演</span></div></div></div><div class="stl-item R p" data-y="2018"><span class="stl-node"></span><div class="stl-card"><div class="stl-yr">2018</div><div class="stl-note">土味情话与卡路里齐飞，确认过眼神是对的人。</div><div class="stl-chips"><span style="animation-range:entry 5% entry 45%">确认过眼神</span><span style="animation-range:entry 10% entry 50%">燃烧我的卡路里</span><span style="animation-range:entry 15% entry 55%">好嗨哟</span><span style="animation-range:entry 20% entry 60%">面筋哥出道</span></div></div></div><div class="stl-item L b mega" data-y="2019"><span class="stl-node"></span><div class="stl-card"><div class="stl-yr">2019</div><div class="stl-note">正能量与「我太难了」并行不悖，awsl 萌翻全站。</div><div class="stl-chips"><span style="animation-range:entry 5% entry 45%">奥利给</span><span style="animation-range:entry 10% entry 50%">我太难了</span><span style="animation-range:entry 15% entry 55%">雨女无瓜</span><span style="animation-range:entry 20% entry 60%">柠檬精</span><span style="animation-range:entry 25% entry 65%">一键三连</span><span style="animation-range:entry 30% entry 70%">下次一定</span></div><span class="stl-badge" style="animation-range:entry 20% entry 75%">🏆 B站年度弹幕：AWSL</span></div></div><div class="stl-item R b mega" data-y="2020"><span class="stl-node"></span><div class="stl-card"><div class="stl-yr">2020</div><div class="stl-note">集体回忆杀大年，「爷青回」刷屏；打工人全员上岗。</div><div class="stl-chips"><span style="animation-range:entry 5% entry 45%">yyds</span><span style="animation-range:entry 10% entry 50%">打工人</span><span style="animation-range:entry 15% entry 55%">内卷</span><span style="animation-range:entry 20% entry 60%">淡黄的长裙</span></div><span class="stl-badge" style="animation-range:entry 20% entry 75%">🏆 B站年度弹幕：爷青回</span></div></div><div class="stl-item L b mega" data-y="2021"><span class="stl-node"></span><div class="stl-card"><div class="stl-yr">2021</div><div class="stl-note">坚强外壳全面失守，人人都说「破防了」。</div><div class="stl-chips"><span style="animation-range:entry 5% entry 45%">绝绝子</span><span style="animation-range:entry 10% entry 50%">躺平</span><span style="animation-range:entry 15% entry 55%">夺笋</span><span style="animation-range:entry 20% entry 60%">拿来吧你</span><span style="animation-range:entry 25% entry 65%">法外狂徒张三</span></div><span class="stl-badge" style="animation-range:entry 20% entry 75%">🏆 B站年度弹幕：破防了</span></div></div><div class="stl-item R b mega" data-y="2022"><span class="stl-node"></span><div class="stl-card"><div class="stl-yr">2022</div><div class="stl-note">优雅三件套配齐：栓Q、退退退与电子榨菜。</div><div class="stl-chips"><span style="animation-range:entry 5% entry 45%">栓Q</span><span style="animation-range:entry 10% entry 50%">退退退</span><span style="animation-range:entry 15% entry 55%">电子榨菜</span><span style="animation-range:entry 20% entry 60%">大冤种</span></div><span class="stl-badge" style="animation-range:entry 20% entry 75%">🏆 B站年度弹幕：优雅</span></div></div><div class="stl-item L b mega" data-y="2023"><span class="stl-node"></span><div class="stl-card"><div class="stl-yr">2023</div><div class="stl-note">萌系发音统治互联网，万物皆可「哈基米」。</div><div class="stl-chips"><span style="animation-range:entry 5% entry 45%">尊嘟假嘟</span><span style="animation-range:entry 10% entry 50%">显眼包</span><span style="animation-range:entry 15% entry 55%">搭子</span><span style="animation-range:entry 20% entry 60%">挖呀挖</span><span style="animation-range:entry 25% entry 65%">哈基米</span><span style="animation-range:entry 30% entry 70%">i人e人</span></div><span class="stl-badge" style="animation-range:entry 20% entry 75%">🏆 B站年度弹幕：啊?</span></div></div><div class="stl-item R gr" data-y="2024"><span class="stl-node"></span><div class="stl-card"><div class="stl-yr">2024</div><div class="stl-note">精神状态类热梗大爆发，班味与偷感齐飞。</div><div class="stl-chips"><span style="animation-range:entry 5% entry 45%">city不city</span><span style="animation-range:entry 10% entry 50%">偷感</span><span style="animation-range:entry 15% entry 55%">班味</span><span style="animation-range:entry 20% entry 60%">小孩哥小孩姐</span><span style="animation-range:entry 25% entry 65%">北京到底有谁在啊</span><span style="animation-range:entry 30% entry 70%">红温</span></div></div></div><div class="stl-item L gr" data-y="2025"><span class="stl-node"></span><div class="stl-card"><div class="stl-yr">2025</div><div class="stl-note">苏超开赛，十三城互梗名场面：友谊排名跌出前十三。</div><div class="stl-chips"><span style="animation-range:entry 5% entry 45%">苏超：比赛第一，友谊第十四</span><span style="animation-range:entry 10% entry 50%">DeepSeek 含金量</span><span style="animation-range:entry 15% entry 55%">急急如律令</span><span style="animation-range:entry 20% entry 60%">水灵灵地</span></div></div></div><div class="stl-item R  future mega" data-y="2026"><span class="stl-node"></span><div class="stl-card"><div class="stl-yr">✨ 2026</div><div class="stl-note">本卷正在生成中……第一个 2026 年度热梗，由你书写。</div><div class="stl-chips" id="y2026Chips"><span style="animation-range:entry 5% entry 45%">（虚位以待）</span><span style="animation-range:entry 10% entry 50%">✍️ 下方申报，现场收录</span></div><div class="y2026-add"><input id="y2026Input" maxlength="14" type="text" placeholder="写下你心中的 2026 新梗（14 字内）" aria-label="2026新梗"><button class="btn btn-gold btn-sm" id="y2026Add">🏛️ 申报收录</button></div></div></div></div>
+  </div>
+</div></section>
+</main>
+<div id="toasts" aria-live="polite"></div>
+
+<script>
+/* ============ data.js · 全站数据（共享） ============ */
+var MEMES=[
+{n:'一键三连',c:'弹幕文化',y:2019,h:98.5,d:'点赞、投币、收藏一次到位，B站最高级别的礼节，UP主的梦里全是它。',e:'这期质量太顶了，必须三连！'},
+{n:'下次一定',c:'弹幕文化',y:2019,h:97.8,d:'白嫖界的通用货币：现在不给三连，但许诺一个永远不到期的「下次」。',e:'太强了，下次一定！'},
+{n:'前方高能',c:'弹幕文化',y:2013,h:98.0,d:'名场面预警雷达：看到它请坐稳扶好，非战斗人员请撤离。',e:'前方高能！！（刷屏×999）'},
+{n:'空降',c:'弹幕文化',y:2015,h:95.5,d:'不同设备的进度条位置会漂移，老观众用「01:23 谢谢」给后人指路。',e:'02:14 空降成功，谢谢指路！'},
+{n:'弹幕护体',c:'弹幕文化',y:2014,h:93.0,d:'用满屏弹幕抵挡剧情暴击，恐怖片段前的集体抱团行为。',e:'高能护体！！'},
+{n:'考古',c:'弹幕文化',y:2017,h:94.2,d:'去老视频、老评论区里拜访历史，顺便带一句「从2026年赶来」。',e:'考古现场，弹幕比正片好看系列。'},
+{n:'爷青回',c:'弹幕文化',y:2020,h:96.6,d:'爷的青春回来了；反之「爷青结」，用于青春谢幕。',e:'BGM一响，爷青回。'},
+{n:'awsl',c:'弹幕文化',y:2019,h:96.0,d:'「啊我死了」：被萌到、被甜到时的条件反射，2019年度弹幕。',e:'awsl，这也太可爱了！'},
+{n:'泪目',c:'弹幕文化',y:2015,h:95.0,d:'弹幕区液体超标预警，常与「不争气的眼泪从嘴角流下」连用。',e:'泪目，DNA动了。'},
+{n:'草',c:'弹幕文化',y:2017,h:94.8,d:'来自日语弹幕文化的「笑」：www 长成一片就是草；纯植物，无恶意。',e:'哈哈哈哈草（一片草原）'},
+{n:'2333',c:'弹幕文化',y:2010,h:93.5,d:'源自猫扑表情编号 233 的大笑，笑得越狠拖得越长，长到穿越次元。',e:'233333333333'},
+{n:'破防了',c:'弹幕文化',y:2021,h:96.8,d:'心理防线被击穿的瞬间，2021 年度弹幕，坚强外壳限时出售。',e:'这段 BGM 一起，直接破防。'},
+{n:'优雅',c:'弹幕文化',y:2022,h:92.4,d:'2022 年度弹幕，用于一切潇洒到离谱、离谱到潇洒的操作。',e:'这操作，优雅，实在是太优雅了。'},
+{n:'yyds',c:'抽象冲浪',y:2020,h:97.2,d:'「永远的神」，从电竞解说席出发，登顶全宇宙万能彩虹屁。',e:'烤冷面加双蛋，yyds！'},
+{n:'绝绝子',c:'抽象冲浪',y:2021,h:91.5,d:'好到极致的夸法（也常被用于反讽，食用时注意语境）。',e:'这个转场绝绝子！'},
+{n:'栓Q',c:'抽象冲浪',y:2022,h:95.0,d:'桂林刘涛老师的英文「thank you」神空耳，常与「我真的会谢」组成连招。',e:'栓Q，我真的会谢。'},
+{n:'退退退',c:'抽象冲浪',y:2022,h:93.4,d:'2022 年街头对决名场面，配合魔法手势食用，驱散一切不开心。',e:'退！退！退！'},
+{n:'遥遥领先',c:'抽象冲浪',y:2023,h:94.0,d:'发布会弹幕刷屏名句，现已空降一切领先场景担任 BGM。',e:'这下载速度，遥遥领先。'},
+{n:'尊嘟假嘟',c:'抽象冲浪',y:2023,h:92.0,d:'「真的假的」的萌系发音，配合 O.o 表情效果拔群。',e:'明天放假？尊嘟假嘟？'},
+{n:'city不city',c:'抽象冲浪',y:2024,h:93.6,d:'外国博主带火的摩登口头禅，用于认证一切洋气场景。',e:'夜爬看日出，city不city啊？'},
+{n:'哈基米',c:'抽象冲浪',y:2023,h:91.5,d:'从动画「蜂蜜」音节进化成猫猫视频标配 BGM，萌界硬通货。',e:'这段猫猫视频得配哈基米。'},
+{n:'苏超',c:'抽象冲浪',y:2025,h:95.6,d:'江苏城市足球联赛：「比赛第一，友谊第十四」，十三城互梗名场面。',e:'比赛第一，友谊第十四！'},
+{n:'真香',c:'日常水梗',y:2014,h:95.8,d:'王境泽定律：立过的 flag 有多狠，真香警报就有多响。',e:'今晚绝不熬夜。（凌晨三点）真香。'},
+{n:'电子榨菜',c:'日常水梗',y:2022,h:93.8,d:'干饭标配视频，没有它饭都不香了，配饭界的国民调味料。',e:'今晚的下饭视频选哪个？'},
+{n:'显眼包',c:'日常水梗',y:2023,h:94.5,d:'人群里最活跃的那一个，自带整活体质，全班全公司全小区通用。',e:'咱班的显眼包又营业了。'},
+{n:'搭子',c:'日常水梗',y:2023,h:93.0,d:'精准垂直社交：饭搭子、咖啡搭子、自习搭子，万物皆可搭。',e:'在线求一个自习搭子。'},
+{n:'小孩哥小孩姐',c:'日常水梗',y:2024,h:93.2,d:'对天赋型小朋友的敬称，技能点高到让大人自愧不如。',e:'小孩姐修电脑，比我专业。'},
+{n:'有生之年',c:'日常水梗',y:2013,h:91.0,d:'遥遥无期的更新，追更人的执念与信仰，见证即胜利。',e:'这个坑有生之年能填上吗？'},
+{n:'鸽了',c:'日常水梗',y:2016,h:93.4,d:'鸽子为什么这么大！UP主拖更的万能解释，偶尔也用于自我批评。',e:'说好的周更，又鸽了。'},
+{n:'内卷',c:'精神状态',y:2020,h:92.0,d:'万物皆可卷：绩点、工位、幼儿园简历，卷出天际。',e:'图书馆六点满员，卷死了。'},
+{n:'躺平',c:'精神状态',y:2021,h:92.6,d:'内卷的温柔抵抗方式，姿态是平的，心态是稳的。',e:'躺平不是放弃，是换个姿势呼吸。'},
+{n:'摆烂',c:'精神状态',y:2022,h:93.2,d:'从「卷不动」到「干脆躺着」，当代青年精神状态图鉴。',e:'今天也是摆烂的一天呢。'},
+{n:'打工人',c:'精神状态',y:2020,h:92.8,d:'清晨闹钟一响，全员打工人；句尾必须互相加油。',e:'早安，打工人！'},
+{n:'班味',c:'精神状态',y:2024,h:93.0,d:'上过班，身上就总有洗不掉的味道；放假是唯一的解药。',e:'这才周二，班味已经溢出屏幕。'},
+{n:'红温',c:'精神状态',y:2024,h:92.4,d:'从游戏圈火到日常：脸涨红、温度上升的破防瞬间。',e:'队友这操作，我直接红温。'},
+{n:'那咋了',c:'精神状态',y:2024,h:91.8,d:'万能心态回复：天塌下来，先问一句「那咋了」。',e:'周一又要上班？那咋了。'},
+{n:'偷感',c:'精神状态',y:2024,h:92.2,d:'偷偷努力、悄悄整活，偷感很重＝低调办事不声张。',e:'偷感很重地考了个证。'},
+{n:'奥利给',c:'精神状态',y:2019,h:96.4,d:'「给力噢」的倒放版，正能量冲锋号：干就完了！',e:'没毛病，奥利给！'},
+{n:'Are you OK',c:'鬼畜考古',y:2015,h:95.2,d:'2015 年小米印度发布会开场白，被鬼畜成神曲，从此雷总在B站有了歌声。',e:'Are you OK？哈喽 Thank you！'},
+{n:'金坷垃',c:'鬼畜考古',y:2009,h:92.8,d:'2009 年肥料广告，B 站鬼畜区开山传说之一。',e:'肥料掺了金坷垃，一袋能顶两袋撒！'},
+{n:'鬼畜',c:'鬼畜考古',y:2009,h:96.2,d:'重复、洗脑、同步率拉满的剪辑艺术，小破站镇站之宝。',e:'这鬼畜，一天不看浑身难受。'},
+{n:'法外狂徒张三',c:'鬼畜考古',y:2020,h:97.0,d:'罗翔老师刑法课堂里的传奇人物，涉案领域横跨海陆空。',e:'张三：这题我熟。'},
+{n:'面筋哥',c:'鬼畜考古',y:2018,h:92.6,d:'《我的烤面筋》一开口，就是整个鬼畜区的青春。',e:'面筋，烤面筋～'}
+];
+var VIDEOS=[
+{t:'【全站最强】一键三连的一百种姿势',u:'弹幕研究所',p:'233.3万',d:'03:33',g:'linear-gradient(135deg,#FB7299,#F25D8E)',e:'🪙'},
+{t:'考古向：2009 年的弹幕，是什么味道的？',u:'考古小分队',p:'99.6万',d:'12:09',g:'linear-gradient(135deg,#00A1D6,#0077AA)',e:'🕰️'},
+{t:'当 UP 主说「下次一定」之后……',u:'鸽子改良事务所',p:'66.6万',d:'05:20',g:'linear-gradient(135deg,#FFB027,#FF9231)',e:'🕊️'},
+{t:'电子榨菜大赏：干饭人的精神必备',u:'干饭不积极研究社',p:'150.2万',d:'08:17',g:'linear-gradient(135deg,#2AC864,#0E9F5A)',e:'🍜'}
+];
+var CLASSROOM=[
+{e:'⚡',t:'前方高能',s:'预警雷达',d:'名场面来临前的集体预警。弹幕瞬间整齐列队，后面的人自觉闭麦让路——这是弹幕区最古老的礼仪之一。'},
+{e:'🪂',t:'空降与指路',s:'进度条玄学',d:'不同设备的进度条位置不一样，于是老观众在关键时刻留言「01:23 谢谢」，像接力棒一样传给后人。',p:1},
+{e:'🛡️',t:'护体结界',s:'集体抱团',d:'恐怖片段来临前，满屏「高能护体」筑起一道人墙。弹幕挡不住画面，但挡得住心慌。'},
+{e:'📻',t:'打卡与考古',s:'时间胶囊',d:'「从 2026 年赶来」「每年都要回来看一次」——弹幕是视频的年轮，老视频因此永远热闹。'},
+{e:'🪙',t:'三连致谢',s:'礼仪天花板',d:'白嫖可以，但喜欢请三连。UP 主口播「感谢三连」时，全场弹幕集体起立鼓掌。'},
+{e:'🏆',t:'年度弹幕',s:'官方盖章',d:'弹幕界的世界杯：2019 AWSL → 2020 爷青回 → 2021 破防了 → 2022 优雅 → 2023 啊?。你的年度弹幕是什么？'}
+];
+var QUOTES=[
+{q:'我饿死，也不吃你们一点东西……（真香）',src:'真香 · 《变形计》王境泽',yr:2014,note:'flag 界的不朽定律：立得越狠，香得越快。'},
+{q:'Are you OK？哈喽，Thank you！',src:'雷军 · 小米印度发布会',yr:2015,note:'被剪成神曲后，雷总从此在鬼畜区有了自己的歌声。'},
+{q:'非洲农业不发达，必须要有金坷垃！',src:'金坷垃广告 · 鬼畜开山作',yr:2009,note:'B 站鬼畜区的创世神话，一人一半才是圣斗士。'},
+{q:'面筋，烤面筋～',src:'面筋哥 · 《我的烤面筋》',yr:2018,note:'一开口，就是整个鬼畜区的青春。'},
+{q:'淡黄的长裙，蓬松的头发',src:'《青春有你 2》名场面',yr:2020,note:'万人读书现场，rap 当堂变朗读课。'},
+{q:'雨女无瓜',src:'《巴啦啦小魔仙》游乐王子',yr:2019,note:'方言空耳文学鼻祖，与你没有关系。'},
+{q:'法外狂徒张三',src:'罗翔说刑法',yr:2020,note:'刑法课堂传奇主角，每个案例都有他。'},
+{q:'奥利给！干了兄弟们！',src:'冬泳怪鸽',yr:2019,note:'正能量冲锋号角，干就完了！'},
+{q:'栓Q，我真的会谢',src:'桂林刘涛老师',yr:2022,note:'英文 thank you 神空耳，谢意拉满。'},
+{q:'退！退！退！',src:'2022 街头对决名场面',yr:2022,note:'配合手势食用，专治一切不开心。'},
+{q:'北京到底有谁在啊！',src:'《玫瑰的故事》方协文',yr:2024,note:'一句台词，引发全国文旅官方下场抢答。'},
+{q:'比赛第一，友谊第十四',src:'苏超 · 江苏城市足球联赛',yr:2025,note:'十三城互梗名场面，友谊在积分榜上找不到位置。'}
+];
+var TIMELINE=[
+{y:2009,note:'B 站上线，「小破站」正式启航。',chips:['贾君鹏，你妈妈喊你回家吃饭','金坷垃','2333（猫扑移民）']},
+{y:2010,note:'「给力」登上人民日报头版，网络热梗完成官方认证首秀。',chips:['给力','神马都是浮云','弹幕文化成型']},
+{y:2011,note:'全民开口就是网络体的一年。',chips:['hold住','伤不起','有木有']},
+{y:2012,note:'影视剧集体供应热梗。',chips:['元芳，你怎么看','江南Style','甄嬛体']},
+{y:2013,note:'弹幕区「前方高能」开始流行。',chips:['待我长发及腰','土豪，我们做朋友吧','人艰不拆']},
+{y:2014,note:'「真香」定律正式立项，人类终将与它共存。',chips:['真香','有钱就是任性','也是醉了']},
+{y:2015,note:'鬼畜区双神曲降临。',chips:['duang~','Are you OK','世界那么大，我想去看看']},
+{y:2016,note:'情绪表达全面更新换代。',chips:['蓝瘦香菇','洪荒之力','友谊的小船说翻就翻']},
+{y:2017,note:'弹幕画风逐渐沙雕。',chips:['扎心了老铁','皮皮虾我们走','请开始你的表演']},
+{y:2018,note:'土味情话与卡路里齐飞。',chips:['确认过眼神','燃烧我的卡路里','好嗨哟']},
+{y:2019,note:'正能量与「我太难了」并行不悖。',chips:['奥利给','我太难了','雨女无瓜','柠檬精']},
+{y:2020,note:'年度弹幕「爷青回」，集体回忆杀。',chips:['yyds','打工人','内卷','淡黄的长裙']},
+{y:2021,note:'年度弹幕「破防了」，坚强外壳全面失守。',chips:['绝绝子','躺平','夺笋','拿来吧你']},
+{y:2022,note:'年度弹幕「优雅」，年度三件套配齐。',chips:['栓Q','退退退','电子榨菜','大冤种']},
+{y:2023,note:'萌系发音统治互联网。',chips:['尊嘟假嘟','显眼包','搭子','挖呀挖','哈基米','i人e人']},
+{y:2024,note:'精神状态类热梗大爆发。',chips:['city不city','偷感','班味','小孩哥小孩姐','北京到底有谁在啊']},
+{y:2025,note:'苏超开赛，友谊排名跌出前十三。',chips:['苏超：比赛第一，友谊第十四','DeepSeek 含金量','急急如律令','水灵灵地']}
+];
+var RANKS=[
+{n:'一键三连',c:'弹幕礼仪天花板',h:98.6,d:0.8},
+{n:'下次一定',c:'白嫖文学之巅',h:97.9,d:1.2},
+{n:'前方高能',c:'预警雷达',h:96.4,d:-0.6},
+{n:'爷青回',c:'回忆杀专用',h:95.1,d:0.4},
+{n:'空降指路',c:'进度条玄学',h:94.7,d:2.1},
+{n:'真香',c:'flag 必然定律',h:93.9,d:-1.3},
+{n:'奥利给',c:'正能量冲锋号',h:92.8,d:0.2},
+{n:'yyds',c:'万能彩虹屁',h:91.5,d:1.7},
+{n:'法外狂徒张三',c:'罗翔课堂传奇',h:90.8,d:-0.4},
+{n:'电子榨菜',c:'干饭标配',h:90.2,d:0.9}
+];
+var QUIZ=[
+{q:'「一键三连」指的是哪三个动作？',o:['点赞 · 投币 · 收藏','转发 · 评论 · 艾特好友','关注 · 打卡 · 签到','充电 · 分享 · 打榜'],a:0,f:'点赞投币收藏一条龙，B 站礼节天花板。'},
+{q:'弹幕说「01:23 空降成功」是在干什么？',o:['报告航班准点降落','感谢楼层指路，进度条位置对上了','宣布直播正式开始','申请担任课代表'],a:1,f:'不同设备进度条会漂移，老观众留言为后人指路。'},
+{q:'「下次一定」的核心含义是？',o:['预约下周的直播','官方延期更新声明','白嫖式三连承诺，且永不到期','新年健身计划'],a:2,f:'现在不给，下次一定——至于下次是哪次，没人知道。'},
+{q:'「爷青回」表达的情绪是？',o:['爷爷去健身了','青春期的烦恼','重返十八岁的愿望','青春回忆被瞬间唤醒'],a:3,f:'2020 年 B 站年度弹幕，回忆杀触发器。'},
+{q:'B 站 2019 年度弹幕是？',o:['AWSL','泪目','草','2333'],a:0,f:'「啊我死了」，被萌到时的条件反射。'},
+{q:'「前方高能」通常预告什么？',o:['能量补给站开张','电力检修通知','前方限速拍照','名场面即将到来，请坐稳'],a:3,f:'弹幕区预警雷达，非战斗人员请撤离。'},
+{q:'罗翔老师课堂里的「法外狂徒」叫什么？',o:['张三','张伟','王五','李四'],a:0,f:'涉案领域横跨海陆空的传奇人物。'},
+{q:'「比赛第一，友谊第十四」出自哪个热梗？',o:['春季运动会','电竞总决赛','广场舞大赛','苏超'],a:3,f:'2025 年江苏城市足球联赛，十三城互梗名场面。'}
+];
+var RESULTS=[
+[1,'梗圈萌新 · 刚通网','🌱','问题不大，收藏本馆从头补课，明年的你不可同日而语。'],
+[3,'冲浪学徒 · 潜力股','🏄','已有两分姿色，建议每日早中晚各刷一遍弹幕教室。'],
+[5,'梗圈常驻民','🏘️','稳住，你已经可以在家族群里担任梗翻译官了。'],
+[7,'十级冲浪学者','🎓','资深程度获官方盖章，就差一个三连证明自己。'],
+[8,'首席鉴梗官 · 梗王中王','👑','鉴梗十年，出场自带弹幕。馆长的位置给你留好了。']
+];
+var DM_WORDS=['前方高能！','23333','哈哈哈哈哈','泪目','awsl','爷青回','到位','名场面！','草~','保护我方UP主','打卡✓','考古现场','弹幕护体！','一键三连！','空降成功','破防了','太顶了','妈妈问我为什么跪着看视频','优雅，实在是太优雅了','下次一定！'];
+var NOTES=['本榜单由弹幕监督委员会 24 小时盯梢，轮岗制，无薪。','热度数字均为整活值，含梗量请以实际观看为准。','第一名已连续霸榜 2333 周，工作人员正在劝它下班。','榜内全部梗均接受过文明观展培训，请放心食用。','友情提示：想在前排找初恋昵称的，你的青春在名场面展厅。'];
+var MQ=['前方高能','泪目','23333','草（一种植物）','awsl','下次一定','一键三连','空降成功','爷青回','破防了','名场面','优雅'];
+var GEN_COPY=[['前方高能','非战斗人员请撤离'],['这就是','人类高质量弹幕'],['别人家的UP主','我的UP主：下次一定'],['作业写完了吗','就来看一分钟'],['本视频含有','亿点点整活成分'],['泪目','爷青回'],['干饭不积极','思想有问题'],['进来的都是家人','出门请记得三连']];
+var GEN_TPL={pink:{c:['#FFB6C9','#FB7299','#F25D8E']},blue:{c:['#8ED8F8','#00A1D6','#0077AA']},gold:{c:['#FFE7A3','#FFB027','#FF9231']},green:{c:['#9BFFB6','#38F9D7','#2AC864']}};
+/* ---- 游乐场专属数据 ---- */
+var FORTUNES=[
+{lv:'大吉 · 梗运亨通',ico:'🔥',msg:'今天你的弹幕将被一百个人点赞，建议提前想好一句封神台词。',tip:'幸运动作：给第一条视频三连'},
+{lv:'大吉 · 硬币暴富',ico:'🪙',msg:'今日捡到硬币概率 +233%，捡到后记得绕小区跑三圈庆祝。',tip:'幸运动作：给 UP 主充电'},
+{lv:'中吉 · 更新之兆',ico:'📺',msg:'关注的 UP 主今天会更新，但只更 0.5 集，请合理管理预期。',tip:'幸运动作：催更但保持礼貌'},
+{lv:'中吉 · 摸鱼顺遂',ico:'🐟',msg:'工位风水极佳，摸鱼不会被抓，但小心「班味」过重被同事举报。',tip:'幸运动作：泡一杯电子榨菜'},
+{lv:'小吉 · 白嫖无忧',ico:'😌',msg:'今天白嫖到的一切快乐都是合理的，但运势 +1 的方法只有一个：三连。',tip:'幸运动作：下次一定改今天一定'},
+{lv:'吉 · 真香预警',ico:'🍖',msg:'今天立的 flag 全部会以「真香」收尾，请慎立，立了就吃。',tip:'幸运动作：把狠话留到明天'},
+{lv:'平 · 考古宜',ico:'🕰️',msg:'宜考古老视频，宜在老评论区盖「从 2026 年赶来」的时间胶囊。',tip:'幸运动作：翻出十年前的收藏夹'},
+{lv:'末吉 · 鸽神附体',ico:'🕊️',msg:'今天答应别人的事容易鸽，请鸽得小声一点，最好鸽前发个说明。',tip:'幸运动作：把「下周」改成「周下周」'},
+{lv:'凶 · 下次成真',ico:'⚠️',msg:'今日「下次一定」有 8% 概率成真，建议把想做的事现在就做掉。',tip:'幸运动作：立刻三连保平安'},
+{lv:'大凶 · 热榜易主',ico:'📉',msg:'你心中的年度梗可能被挤下热榜第一，但不慌——收藏夹才是永远的家。',tip:'幸运动作：重刷一遍名场面展厅'}
+];
+var RPS_TAUNTS=['就这？我出剪刀纯属直觉','偷看你袖子了（并没有）','小电视的手速，弹幕都追不上','这局不算，我手滑','再来亿局？','我已经参透你的脑电波','平局是宇宙的浪漫'];
+var DENS_KEYS=['真香','爷青回','yyds','awsl','2333','泪目','破防','高能','三连','下次一定','绝绝子','栓Q','退退退','显眼包','搭子','躺平','摆烂','打工人','班味','红温','那咋了','偷感','奥利给','鬼畜','金坷垃','尊嘟','city','哈基米','苏超','电子榨菜','遥遥领先','伞兵','泰裤辣','666','草','笑死','绷不住','典中典','孝','急了','蚌埠住','CPU','纯纯','无语子','寄','润','卷','卷王','内卷','摸鱼','划水','塑料友情','顶','绝了','离谱','乐子','乐子人','抽象','看不懂但大受震撼'];
+var MEMORY_EMO=['📺','🪙','👍','⭐','🔥','🕊️','🍜','🧨'];
+/* ---- 共享卡片渲染 ---- */
+window.memeCardHTML=function(m){
+  return '<article class="mcard" data-n="'+m.n+'"><div class="top"><h3>'+m.n+'</h3><span class="heat-pill">🔥 '+m.h.toFixed(1)+'</span></div>'+
+  '<div class="tags"><span class="tag">'+m.c+'</span><span class="tag year">'+m.y+' 年出道</span></div>'+
+  '<p>'+m.d+'</p><div class="quote"><b>弹幕示范</b>'+m.e+'</div>'+
+  '<div class="bar" title="热度"><i style="width:'+m.h+'%"></i></div></article>';
+};
+
+/* ---- 哲♂学厅数据（语言学/纪念向，内容全年龄） ---- */
+var PHILO=[
+{t:'有精神',d:'哲♂学第一精神图腾：形容状态拉满、斗志四溢。看到兄弟蔫了，就送他这三个字。'},
+{t:'带',d:'「很带」＝很酷、很帅、很有味道。哲♂学语境里的最高级形容词，一个字顶十个彩虹屁。'},
+{t:'深♂意',d:'深奥之意。当一个动作或一句台词 beyond 了表面含义，弹幕就会刷「深♂意」。'},
+{t:'兄♂弟',d:'哲♂学厅对同好的尊称：一起进步、互相推举、永不缺席的人。'},
+{t:'比利王',d:'比利·海灵顿（1969-2020）的尊称。其表演视频经弹幕网站二次创作，催生出独特的哲♂学演绎文化。2020 年离世时全网刷屏纪念——他留下的是「有精神」的乐观。'},
+{t:'木吉',d:'与比利王齐名的哲♂学文化常驻角色，名场面以其视角著称，「木吉视角」已成为一类剪辑流派。'},
+{t:'健身房系',d:'哲♂学素材的主要场景分类，如今泛指一切挥汗如雨、互相成就的训练名场面。'},
+{t:'hin',d:'副词加强版：「hin 有精神」。弹幕注音文学的代表，语气比「很」上扬 233%。'}
+];
+/* ============ core.js · 全站壳层：CDN 库注入 / 壳层 UI / 光标 / 磁吸 / 彩蛋 ============
+   Design Language: Pop Editorial —— 本文件负责所有页面的共享骨架 */
+window.MEME=(function(){
+  var PAGES=[
+    {id:'home',href:'index.html',icon:'tv',label:'首页'},
+    {id:'dict',href:'dict.html',icon:'book-open',label:'梗词典'},
+    {id:'rank',href:'rank.html',icon:'flame',label:'梗热榜'},
+    {id:'classroom',href:'classroom.html',icon:'graduation-cap',label:'弹幕教室'},
+    {id:'quotes',href:'quotes.html',icon:'clapperboard',label:'名场面'},
+    {id:'history',href:'history.html',icon:'landmark',label:'编年史'},
+    {id:'factory',href:'factory.html',icon:'factory',label:'梗图工厂'},
+    {id:'quiz',href:'quiz.html',icon:'flask-conical',label:'梗力测试'},
+    {id:'playground',href:'playground.html',icon:'gamepad-2',label:'游乐场'},
+    {id:'arcade',href:'arcade.html',icon:'joystick',label:'梗游厅'},
+    {id:'philosophy',href:'philosophy.html',icon:'dumbbell',label:'哲♂学厅'},
+    {id:'sanlian',href:'sanlian.html',icon:'coins',label:'三连现场'}
+  ];
+  var page=document.body.dataset.page||'home';
+  var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var AUTO=!!(navigator.webdriver);           /* 无头/合成渲染环境：跳过所有时序动画 */
+  var FINE=window.matchMedia&&matchMedia('(hover:hover) and (pointer:fine)').matches;
+  function $(id){return document.getElementById(id)}
+  function qs(name){var m=location.search.match(new RegExp('[?&]'+name+'=([^&]+)'));return m?decodeURIComponent(m[1].replace(/\+/g,' ')):''}
+  function toast(msg){
+    var box=$('toasts');if(!box)return;
+    var t=document.createElement('div');t.className='toast';t.textContent=msg;box.appendChild(t);
+    setTimeout(function(){t.classList.add('out');setTimeout(function(){t.remove()},350)},2600);
+  }
+  function burst(x,y){
+    x=x||0.5;y=y||0.4;
+    if(window.confetti){confetti({particleCount:130,spread:78,origin:{x:x,y:y},zIndex:1200});return}
+    var c=document.createElement('canvas');c.style.cssText='position:fixed;inset:0;pointer-events:none;z-index:1200';document.body.appendChild(c);
+    var fx=c.getContext('2d');c.width=innerWidth;c.height=innerHeight;
+    var cols=['#F25D8E','#00A1D6','#FFC533','#2AC864'];
+    var ps=[];for(var i=0;i<90;i++)ps.push({x:innerWidth*x,y:innerHeight*y,vx:(Math.random()-.5)*12,vy:Math.random()*-11-3,r:3+Math.random()*5,col:cols[Math.floor(Math.random()*4)],a:1,rot:Math.random()*6});
+    (function f(){fx.clearRect(0,0,c.width,c.height);var alive=false;
+      ps.forEach(function(p){p.vy+=0.32;p.x+=p.vx;p.y+=p.vy;p.a-=0.011;p.rot+=0.15;
+        if(p.a>0){alive=true;fx.save();fx.globalAlpha=p.a;fx.translate(p.x,p.y);fx.rotate(p.rot);fx.fillStyle=p.col;fx.fillRect(-p.r,-p.r/2,p.r*2,p.r);fx.restore()}});
+      if(alive)requestAnimationFrame(f);else c.remove()})();
+  }
+  /* ---- Lucide 图标：渲染 + 动态内容自动刷新 ---- */
+  function refreshIcons(){
+    if(window.lucide&&document.querySelector('[data-lucide]')){try{lucide.createIcons()}catch(e){}}
+  }
+  function watchIcons(){
+    if(!window.MutationObserver)return;
+    var t=null;
+    new MutationObserver(function(){
+      clearTimeout(t);t=setTimeout(function(){
+        if(document.querySelector('[data-lucide]'))refreshIcons(); /* 无待渲染图标时零开销 */
+      },200);
+    }).observe(document.body,{childList:true,subtree:true});
+  }
+  /* ---- CDN 动态注入（lucide / gsap+ScrollTrigger / lenis） ---- */
+  function loadLib(src,cb){
+    var s=document.createElement('script');s.src=src;s.onload=cb;s.onerror=cb;document.head.appendChild(s);
+  }
+  function loadLibs(){
+    var chain=[['https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js',function(){refreshIcons();watchIcons()}],
+               ['https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js',null],
+               ['https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js',function(){if(window.gsap)gsap.registerPlugin(ScrollTrigger)}],
+               ['https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js',function(){initLenis()}]];
+    (function next(i){if(i>=chain.length){afterLibs();return}
+      loadLib(chain[i][0],function(){var cb=chain[i][1];if(cb)cb();next(i+1)});
+    })(0);
+  }
+  function initLenis(){
+    if(RM||AUTO||!window.Lenis)return;
+    try{var lenis=new Lenis({duration:1.1,smoothWheel:true});
+      document.documentElement.style.scrollBehavior='auto'; /* 双重平滑会互相拉扯导致滚轮卡顿 */
+      function raf(t){lenis.raf(t);requestAnimationFrame(raf)}requestAnimationFrame(raf);
+    }catch(e){}
+  }
+  function afterLibs(){heroIntro()}
+  /* ---- 首屏进入动画（GSAP；无头环境跳过，内容永远可见） ---- */
+  function heroIntro(){
+    if(!window.gsap||RM||AUTO)return;
+    try{
+      var els=document.querySelectorAll('.hero-badges .hbadge,.hero-title,.hero-sub,.hero-ctas,.dm-send,.hero-stats');
+      if(els.length)gsap.from(els,{y:34,opacity:0,duration:.7,stagger:.09,ease:'power3.out',clearProps:'all'});
+    }catch(e){}
+  }
+  var stormHook=null;
+  /* ---- 头部 ---- */
+  function renderHeader(){
+    var nav=PAGES.map(function(p){return '<a href="'+p.href+'"'+(p.id===page?' class="on"':'')+'><i data-lucide="'+p.icon+'"></i>'+p.label+'</a>'}).join('');
+    var mh=PAGES.map(function(p){return '<a href="'+p.href+'"><i data-lucide="'+p.icon+'"></i>'+p.label+'</a>'}).join('');
+    var hd=document.createElement('div');hd.id='topbar';
+    hd.innerHTML='<div class="container row">'+
+      '<a class="logo" href="index.html" id="logo" title="连点三下有惊喜"><span class="tvbox">2333</span><span><b>小破站梗文化博物馆</b><span class="sub">非官方 · 纯整活</span></span></a>'+
+      '<nav id="topnav" aria-label="主导航">'+nav+'</nav>'+
+      '<div class="top-right">'+
+        '<form class="searchbox" id="topSearchForm"><i data-lucide="search"></i><input id="topSearch" type="search" placeholder="搜个梗试试，比如「真香」" aria-label="搜索梗"><span class="hint">/</span></form>'+
+        '<button class="icon-btn" id="themeBtn" title="切换深色模式" aria-label="切换深色模式"><i data-lucide="moon"></i></button>'+
+        '<a class="btn btn-primary btn-sm" href="sanlian.html"><i data-lucide="coins"></i>一键三连</a>'+
+        '<button class="icon-btn" id="hamburger" aria-label="打开菜单" aria-expanded="false"><i data-lucide="menu"></i></button>'+
+      '</div></div><div id="mobileMenu">'+mh+'</div>';
+    document.body.insertBefore(hd,document.body.firstChild);
+    $('themeBtn').addEventListener('click',function(){
+      var next=document.documentElement.dataset.theme==='dark'?'light':'dark';
+      try{localStorage.setItem('meme-theme',next)}catch(e){}
+      applyTheme(next,true);  /* 手动选择：写入存储并广播 */
+    });
+    $('hamburger').addEventListener('click',function(){
+      var m=$('mobileMenu'),open=m.classList.toggle('open');
+      this.setAttribute('aria-expanded',open?'true':'false');
+      this.innerHTML='<i data-lucide="'+(open?'x':'menu')+'"></i>';refreshIcons();
+    });
+    $('topSearchForm').addEventListener('submit',function(e){
+      e.preventDefault();var v=$('topSearch').value.trim();
+      if(!v){toast('搜点什么吧，比如「真香」');return}
+      if(window.DICT_HOOK){window.DICT_HOOK(v);return}
+      location.href='dict.html?q='+encodeURIComponent(v);
+    });
+    var clicks=0,ct=null;
+    $('logo').addEventListener('click',function(){
+      clicks++;clearTimeout(ct);ct=setTimeout(function(){clicks=0},900);
+      if(clicks>=3){clicks=0;
+        document.body.classList.remove('wobble');void document.body.offsetWidth;document.body.classList.add('wobble');
+        if(stormHook)stormHook('小破站冲鸭');
+        toast('🔨 彩蛋：小电视被拍了三下，弹幕沸腾了');burst(0.15,0.08);
+      }
+    });
+  }
+  /* ---- 楼层导航 / 移动端快捷栏 ---- */
+  function renderFloors(){
+    var f=document.createElement('nav');f.id='floors';f.setAttribute('aria-label','页面导航');
+    f.innerHTML=PAGES.map(function(p){return '<a href="'+p.href+'"'+(p.id===page?' class="on"':'')+'><span>'+p.label+'</span><i class="dot"></i></a>'}).join('');
+    document.body.appendChild(f);
+    var b=document.createElement('nav');b.id='bottomnav';b.setAttribute('aria-label','快捷导航');
+    b.innerHTML='<div class="inner">'+PAGES.map(function(p){return '<a href="'+p.href+'"'+(p.id===page?' class="on"':'')+'><i data-lucide="'+p.icon+'"></i>'+p.label+'</a>'}).join('')+'</div>';
+    document.body.appendChild(b);
+  }
+  /* ---- 页脚 ---- */
+  function renderFooter(){
+    var ft=document.createElement('footer');
+    ft.innerHTML='<div class="container"><div class="foot-grid">'+
+      '<div><h4>关于本馆</h4><p>小破站梗文化博物馆是一座纯粉丝向的互联网快乐收藏馆，与 B 站官方无关。所有梗均为网友集体创作；出处如有出入，欢迎弹幕指正（下次一定改）。设计语言：Pop Editorial，由弹幕、贴纸与硬阴影构成。</p></div>'+
+      '<div><h4>展厅速览</h4><ul>'+PAGES.map(function(p){return '<li><a href="'+p.href+'"><i data-lucide="'+p.icon+'"></i>'+p.label+'</a></li>'}).join('')+'</ul></div>'+
+      '<div><h4>彩蛋提示</h4><ul><li>在键盘上输入 2333 试试</li><li>连点左上角小电视三下</li><li>切走标签页再回来看看标题</li><li>游乐场里藏着一只「下次一定」</li></ul></div>'+
+      '</div><div class="foot-bottom"><span>© 2026 小破站梗文化博物馆 · 由一键三连与人类高质量弹幕驱动</span><span>梗备案号：2333-33-2333 · 建议佩戴快乐食用</span></div></div>';
+    document.body.appendChild(ft);
+  }
+  /* ---- 顶部滚动进度条 ---- */
+  function renderProgress(){
+    var p=document.createElement('div');p.id='progress';document.body.appendChild(p);
+    var tick=false;
+    window.addEventListener('scroll',function(){
+      if(tick)return;tick=true;
+      requestAnimationFrame(function(){
+        var h=document.documentElement;
+        p.style.width=(h.scrollTop/Math.max(1,h.scrollHeight-h.clientHeight)*100)+'%';
+        tick=false;
+      });
+    },{passive:true});
+  }
+  /* ---- 自定义光标 + 磁吸按钮（桌面 / 非降级环境） ---- */
+  function initCursorMagnet(){
+    if(!FINE||RM||AUTO)return;
+    var cur=document.createElement('div');cur.id='cursor';document.body.appendChild(cur);
+    var tx=innerWidth/2,ty=innerHeight/2,cx=tx,cy=ty;
+    document.addEventListener('pointermove',function(e){tx=e.clientX;ty=e.clientY});
+    (function loop(){
+      cx+=(tx-cx)*0.22;cy+=(ty-cy)*0.22;
+      if(Math.abs(tx-cx)>.05||Math.abs(ty-cy)>.05)cur.style.left=cx+'px',cur.style.top=cy+'px';
+      requestAnimationFrame(loop)})();
+    document.addEventListener('pointerover',function(e){
+      cur.classList.toggle('hot',!!e.target.closest('a,button,.flip,.mem-cell,input,select,textarea,[role="button"]'));
+    });
+    document.querySelectorAll('.btn').forEach(function(b){
+      b.addEventListener('pointermove',function(e){
+        var r=b.getBoundingClientRect();
+        b.style.transform='translate('+((e.clientX-r.left)/r.width-.5)*8+'px,'+((e.clientY-r.top)/r.height-.5)*8+'px)';
+      });
+      b.addEventListener('pointerleave',function(){b.style.transform=''});
+    });
+  }
+  /* ---- 主题：?theme= 参数 > 本地存储 > 系统偏好；未手动选择时跟随系统实时切换 ---- */
+  var themeCbs=[];
+  function applyTheme(t,notify){
+    document.documentElement.dataset.theme=t;
+    var mc=document.querySelector('meta[name="theme-color"]');
+    if(mc)mc.content=(t==='dark'?'#141419':'#FAF6EF');
+    syncThemeBtn();
+    if(notify)themeCbs.forEach(function(cb){try{cb(t)}catch(e){}});
+  }
+  function initTheme(){
+    var m=location.search.match(/[?&]theme=(light|dark)/);
+    if(m){try{localStorage.setItem('meme-theme',m[1])}catch(e){}applyTheme(m[1],false);return}
+    var saved=null;try{saved=localStorage.getItem('meme-theme')}catch(e){}
+    if(saved){applyTheme(saved,false);return}
+    var sys=window.matchMedia?matchMedia('(prefers-color-scheme: dark)'):null;
+    if(sys&&sys.matches)applyTheme('dark',false);
+    if(sys&&sys.addEventListener&&!saved){  /* 用户未表态时跟随系统 */
+      sys.addEventListener('change',function(e){
+        var has=null;try{has=localStorage.getItem('meme-theme')}catch(err){}
+        if(!has)applyTheme(e.matches?'dark':'light',true);
+      });
+    }
+  }
+  function syncThemeBtn(){var b=$('themeBtn');if(b){b.innerHTML='<i data-lucide="'+(document.documentElement.dataset.theme==='dark'?'sun':'moon')+'"></i>';refreshIcons()}}
+  /* ---- 加载彩蛋 ---- */
+  function runLoader(){
+    var l=$('loader');if(!l)return;
+    if(AUTO||location.search.indexOf('noloader')>-1){l.classList.add('done');return}
+    var pcur=PAGES.filter(function(p){return p.id===page})[0]||PAGES[0];
+    var msgs=['正在唤醒小电视…','正在布置「'+pcur.label+'」展厅…','假装卡住：99%…','100%！下次一定'];
+    var i=0,bar=$('loadBar'),msg=$('loadMsg');
+    var t=setInterval(function(){i++;
+      if(i<msgs.length-1){if(msg)msg.textContent=msgs[i];if(bar)bar.style.width=(i/(msgs.length-1)*94+2)+'%'}
+      else{if(msg)msg.textContent=msgs[msgs.length-1];if(bar)bar.style.width='100%';clearInterval(t);
+        setTimeout(function(){l.classList.add('done')},300)}
+    },240);
+    setTimeout(function(){l.classList.add('done')},2400);
+  }
+  /* ---- 彩蛋 ---- */
+  function initEggs(){
+    var buf='';
+    document.addEventListener('keydown',function(e){
+      if(e.key==='/'&&!/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)){e.preventDefault();var s=$('topSearch');if(s)s.focus();return}
+      buf=(buf+(e.key||'')).slice(-4);
+      if(buf==='2333'){if(stormHook)stormHook('23333');burst(0.5,0.3);toast('检测到高阶冲浪选手，弹幕雨已装填 🌧️');buf=''}
+    });
+    var baseTitle=document.title;
+    document.addEventListener('visibilitychange',function(){
+      if(document.hidden)document.title='╭(°A°,)╮ 三连还没给呢！';
+      else{document.title='欢迎回来！下次一定？';setTimeout(function(){document.title=baseTitle},2000)}
+    });
+  }
+  /* ---- 启动 ---- */
+  renderHeader();initTheme();runLoader();renderFloors();renderFooter();renderProgress();initEggs();initCursorMagnet();
+  loadLibs();syncThemeBtn();
+  return {
+    page:page,PAGES:PAGES,$:$,toast:toast,burst:burst,qs:qs,icons:refreshIcons,
+    setStorm:function(fn){stormHook=fn},storm:function(w){if(stormHook)stormHook(w)},
+    onThemeChange:function(cb){themeCbs.push(cb)},
+    theme:function(){return document.documentElement.dataset.theme||'light'}
+  };
+})();
+/* ============ sound.js · 全站音效系统 ============
+   WebAudio 全合成，零素材依赖；默认静音，localStorage('meme-sound') 记忆开关。
+   事件分类：tap=按钮点击 / win=彩蛋·成就 / end=游戏结算 / special=主题·专属音 */
+window.SFX=(function(){
+  var enabled=false, ctx=null, last=0;
+  var SITE={'tap':[['C6',.045,0],['E6',.04,25]],'win':[['C5',.09,0],['E5',.09,70],['G5',.12,140],['C6',.16,210]],'end':[['E5',.12,0],['C5',.14,110],['G4',.2,220]],'special':[['G5',.07,0],['B5',.07,60],['D6',.11,120]]};
+  var GAME={'combo':[['D5',.06,0],['F#5',.06,55],['A5',.09,110]],'bad':[['A3',.14,0],['E3',.18,80]],'pop':['sine',175,85,.13,.12],'quack':[['A4',.07,0],['D4',.09,70]]};
+  function ensure(){
+    try{ctx=ctx||new (window.AudioContext||window.webkitAudioContext)();
+      if(ctx.state==='suspended')ctx.resume();
+      return true;
+    }catch(e){return false}
+  }
+  function tone(freq,when,dur,type,vol){
+    var o=ctx.createOscillator(),g=ctx.createGain(),t=ctx.currentTime+when;
+    o.type=type||'triangle';o.frequency.setValueAtTime(freq,t);
+    g.gain.setValueAtTime(vol||.05,t);
+    g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+    o.connect(g);g.connect(ctx.destination);
+    o.start(t);o.stop(t+dur+.02);
+  }
+  function slide(from,to,dur,vol){
+    try{
+      var o=ctx.createOscillator(),g=ctx.createGain(),t=ctx.currentTime;
+      o.type='sine';o.frequency.setValueAtTime(from,t);
+      o.frequency.exponentialRampToValueAtTime(to,t+dur);
+      g.gain.setValueAtTime(vol||.1,t);
+      g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+      o.connect(g);g.connect(ctx.destination);o.start(t);o.stop(t+dur+.02);
+    }catch(e){}
+  }
+  function play(name,vol){
+    if(!enabled||!ensure())return;
+    var now=Date.now();
+    if(now-last<40)return;
+    last=now;
+    var seq=SITE[name];
+    if(seq)seq.forEach(function(s,i){tone(noteHz(s[0]),s[2]/1000,s[1],name==='tap'?'square':'triangle',(vol||1)*(name==='tap'?.05:.07))});
+    else if(name==='pop')slide(175,85,.13,.11);
+    else if(name==='quack'){tone(440,0,.07,'square',.06);tone(294,.07,.09,'square',.06)}
+    else if(GAME[name])GAME[name].forEach(function(s,i){tone(noteHz(s[0]),s[2]/1000,s[1],'triangle',.07)});
+  }
+  function noteHz(n){
+    var NOTES={C3:130.81,E3:164.81,G3:196,B3:246.94,A3:220,D4:293.66,E4:329.63,G4:392,A4:440,B4:493.88,C5:523.25,D5:587.33,E5:659.25,Fs5:739.99,G5:783.99,A5:880,B5:987.77,C6:1046.5,D6:1174.7};
+    return NOTES[n]||440;
+  }
+  /* ---- 一键开启：导航栏扬声器按钮 ---- */
+  function init(){
+    try{enabled=localStorage.getItem('meme-sound')==='on'}catch(e){}
+    bindGlobal();
+    function mount(){
+      var btn=document.createElement('button');
+      btn.className='icon-btn';btn.id='soundBtn';btn.title='音效开关（当前'+(enabled?'已开启':'静音')+'）';
+      btn.setAttribute('aria-label','音效开关');btn.setAttribute('aria-pressed',enabled?'true':'false');
+      btn.innerHTML='<i data-lucide="'+(enabled?'volume-2':'volume-x')+'"></i>';
+      var sr=$('soundBtn');
+      if(sr)sr.replaceWith(btn);
+      else{var tr=document.querySelector('#topbar .top-right');if(tr)tr.insertBefore(btn,tr.firstChild)}
+      btn.addEventListener('click',function(){
+        enabled=!enabled;
+        try{localStorage.setItem('meme-sound',enabled?'on':'off')}catch(e){}
+        this.innerHTML='<i data-lucide="'+(enabled?'volume-2':'volume-x')+'"></i>';MEME.icons();
+        this.setAttribute('aria-pressed',enabled?'true':'false');
+        if(enabled){ensure();play('special');MEME.toast('🔊 音效已开启（再点一次静音）')}
+        else MEME.toast('🔇 已静音');
+      });
+      MEME.icons();
+    }
+    mount();
+  }
+  /* ---- 全局自动接线：按钮/链接点击 → tap 音 ---- */
+  function bindGlobal(){
+    document.addEventListener('pointerdown',function(e){
+      if(!enabled)return;
+      var el=e.target.closest('button,a,.chip,.mem-cell,.sl-btn,#fleeBtn,.rps-btns button,.hole,.opt');
+      if(el&&!el.closest('#soundBtn'))play('tap');
+      var btn=e.target.closest('#soundBtn');
+      if(btn)play('special');
+    },true);
+  }
+  /* ---- 便捷 API：site 事件 / 游戏事件 ---- */
+  function sfx(name,vol){play(name,vol)}
+  function game(name){
+    if(!enabled||!ensure())return;
+    var now=Date.now();
+    if(now-last<40)return;
+    last=now;
+    if(name==='pop')slide(175,85,.13,.11);
+    else if(name==='quack'){tone(440,0,.07,'square',.06);tone(294,.07,.09,'square',.06)}
+    else if(GAME[name])GAME[name].forEach(function(s,i){tone(noteHz(s[0]),s[2]/1000,s[1],'triangle',.07)});
+  }
+  return {init:init,sfx:sfx,game:game,get enabled(){return enabled}};
+})();
+
+if(window.MEME&&document.body)SFX.init();else document.addEventListener("DOMContentLoaded",function(){SFX.init()});
+/* ============ fx.js · 全站动感层 ============
+   滚动渐入 / 卡片 3D 倾斜 / 按钮波纹 / 页面擦除转场 / Konami / 发呆提醒
+   全部尊重 prefers-reduced-motion；无头环境(webdriver)自动跳过动画（内容恒可见） */
+(function(){
+  var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var AUTO=!!(navigator.webdriver);
+  var FINE=window.matchMedia&&matchMedia('(hover:hover) and (pointer:fine)').matches;
+  var RUN=!RM&&!AUTO;
+  var $=function(id){return document.getElementById(id)};
+  /* ---------- 1. 滚动渐入（IO 驱动，批内交错） ---------- */
+  var RV_SEL='.mcard,.dir-card,.vcard,.class-card,.vocab-card,.creed,.game-frame,.widget,.arcade-links a,.rank-row,.flip,.quiz-box,.sanlian-wrap,.philo-origin,.conv-box';
+  function initReveal(){
+    if(!RUN||!window.IntersectionObserver)return;
+    document.documentElement.classList.add('fx-armed');
+    var els=Array.prototype.slice.call(document.querySelectorAll(RV_SEL));
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(!en.isIntersecting)return;
+        en.target.classList.add('fx-in');
+        io.unobserve(en.target);
+        /* 渐入完成后摘除专用类与 inline delay，把 transform 过渡还给组件（hover 立即响应） */
+        setTimeout(function(){en.target.classList.remove('fx-rv');en.target.style.transitionDelay=''},700);
+      });
+    },{rootMargin:'0px 0px -8% 0px',threshold:0.08});
+    els.forEach(function(el,i){
+      el.classList.add('fx-rv');
+      el.style.transitionDelay=(i%6)*60+'ms';
+      io.observe(el);
+    });
+  }
+  /* ---------- 2. 卡片 3D 倾斜跟随（桌面） ---------- */
+  var TILT_SEL='.mcard,.vcard,.dir-card,.widget,.vocab-card';
+  function initTilt(){
+    if(!FINE||!RUN)return;
+    document.querySelectorAll(TILT_SEL).forEach(function(card){
+      var raf=null;
+      card.addEventListener('pointermove',function(e){
+        if(raf)return;
+        raf=requestAnimationFrame(function(){
+          raf=null;
+          var r=card.getBoundingClientRect();
+          if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)return;
+          var dx=(e.clientX-r.left)/r.width-.5, dy=(e.clientY-r.top)/r.height-.5;
+          card.style.transform='perspective(700px) rotateX('+(-dy*7).toFixed(2)+'deg) rotateY('+(dx*7).toFixed(2)+'deg) translate(-3px,-3px)';
+        });
+      });
+      card.addEventListener('pointerleave',function(){
+        if(raf){cancelAnimationFrame(raf);raf=null}
+        card.style.transform='';
+      });
+    });
+  }
+  /* ---------- 3. 按钮波纹（Pop 墨圈） ---------- */
+  function initRipple(){
+    if(!RUN)return;
+    document.addEventListener('pointerdown',function(e){
+      var b=e.target.closest('.btn,.chip,.sl-btn,.opt,.icon-btn,#cpsBtn,#bottleBtn,#dbBtn');
+      if(!b)return;
+      var r=b.getBoundingClientRect(),d=Math.max(r.width,r.height)*1.6;
+      var s=document.createElement('span');
+      s.className='fx-ripple';
+      s.style.cssText='width:'+d+'px;height:'+d+'px;left:'+(e.clientX-r.left-d/2)+'px;top:'+(e.clientY-r.top-d/2)+'px;';
+      if(getComputedStyle(b).position==='static')b.style.position='relative';
+      if(getComputedStyle(b).overflow!=='hidden')b.style.overflow='hidden';
+      b.appendChild(s);
+      setTimeout(function(){s.remove()},480);
+    },true);
+  }
+  /* ---------- 4. 页面擦除转场（站内链接） ---------- */
+  function initWipe(){
+    if(!RUN)return;
+    var w=document.createElement('div');w.className='fx-wipe';document.body.appendChild(w);
+    document.addEventListener('click',function(e){
+      if(e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+      var a=e.target.closest('a[href]');
+      if(!a||a.target==='_blank'||a.hasAttribute('download'))return;
+      var href=a.getAttribute('href');
+      if(!href||href.charAt(0)==='#'||/^https?:/i.test(href)||/^(mailto|tel):/i.test(href))return;
+      if(a.closest('#soundBtn,#themeBtn'))return;
+      e.preventDefault();
+      w.classList.add('go');
+      setTimeout(function(){location.href=href},240);
+    },true);
+    window.addEventListener('pageshow',function(){w.classList.remove('go')});
+  }
+  /* ---------- 5. Konami 彩蛋 ---------- */
+  function initKonami(){
+    var buf='';
+    document.addEventListener('keydown',function(e){
+      buf=(buf+e.key).slice(-20);
+      if(buf==='ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightba'){
+        buf='';
+        document.body.classList.remove('wobble');void document.body.offsetWidth;document.body.classList.add('wobble');
+        if(window.MEME){MEME.storm('上上下下左右左右BA');MEME.burst(0.5,0.35);MEME.toast('🎮 秘技发动！30 条命已到账（精神上的）')}
+      }
+    });
+  }
+  /* ---------- 6. 发呆提醒（40s 无操作） ---------- */
+  function initIdle(){
+    var t=null;
+    function reset(){
+      clearTimeout(t);
+      t=setTimeout(function(){
+        if(window.MEME)MEME.toast('🛋️ 馆长巡查：别装死，「有精神」！');
+      },40000);
+    }
+    ['pointermove','keydown','scroll','pointerdown'].forEach(function(ev){
+      window.addEventListener(ev,function(){reset()},{passive:true});
+    });
+    reset();
+  }
+  /* ---------- 7. 跑马灯随滚动方向转向 ---------- */
+  function initMarquee(){
+    var tr=document.querySelector('.marquee-track');
+    if(!tr||!RUN)return;
+    var lastY=window.scrollY,tick=false;
+    window.addEventListener('scroll',function(){
+      if(tick)return;tick=true;
+      requestAnimationFrame(function(){
+        var y=window.scrollY;
+        if(Math.abs(y-lastY)>=4){tr.style.animationDirection=y>lastY?'normal':'reverse';lastY=y}
+        tick=false;
+      });
+    },{passive:true});
+  }
+  /* ---------- 8. 顶栏滚动投影 ---------- */
+  function initTopShadow(){
+    var bar=document.getElementById('topbar');
+    if(!bar)return;
+    window.addEventListener('scroll',function(){
+      bar.classList.toggle('scrolled',window.scrollY>10);
+    },{passive:true});
+  }
+  /* ---------- 9. 哲♂学厅光标拖尾 ---------- */
+  function initTrail(){
+    if(!FINE||!RUN)return;
+    if(!/philosophy/.test((document.body.dataset.page||'')))return;
+    var last=0;
+    document.addEventListener('pointermove',function(e){
+      var now=Date.now();
+      if(now-last<90)return;
+      last=now;
+      var s=document.createElement('span');
+      s.className='fx-trail';
+      s.textContent=Math.random()<.5?'♂':'💪';
+      s.style.left=e.clientX+'px';s.style.top=e.clientY+'px';
+      document.body.appendChild(s);
+      setTimeout(function(){s.remove()},900);
+    });
+  }
+  /* ---------- 启动 ---------- */
+  function boot(){
+    initReveal();initTilt();initRipple();initWipe();initKonami();initIdle();initMarquee();initTopShadow();initTrail();
+  }
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);
+  else boot();
+})();
+/* ============ history.js · 编年史滚动长卷增强（内容为构建期静态 HTML，JS 仅增强） ============ */
+(function(){
+  var $=MEME.$;
+  var RM=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var stl=$('stl'),fill=$('stlFill'),tv=$('stlTv'),chapNav=$('stlChapters');
+  var eraEls=[1,2,3,4].map(function(i){return document.getElementById('e'+i)});
+  var navAs=chapNav.querySelectorAll('a');
+  function onScroll(){
+    var vh=window.innerHeight;
+    var r=stl.getBoundingClientRect();
+    var p=Math.max(0,Math.min(1,(vh*0.55-r.top)/r.height));
+    fill.style.height=(p*100)+'%';tv.style.top=(p*100)+'%';
+    var cur=0;
+    for(var i=0;i<4;i++){var el=eraEls[i];if(el&&el.getBoundingClientRect().top<vh*0.55)cur=i}
+    navAs.forEach(function(a,i){a.classList.toggle('on',i===cur)});
+  }
+  var tick=false;
+  function onScrollT(){if(tick)return;tick=true;requestAnimationFrame(function(){onScroll();tick=false})}
+  window.addEventListener('scroll',onScrollT,{passive:true});
+  window.addEventListener('resize',function(){onScrollT()});
+  onScroll();
+  function animCount(el){
+    if(RM||!window.IntersectionObserver)return;
+    var n=+el.dataset.n,suf=el.dataset.suf||'',t0=null;
+    requestAnimationFrame(function a(ts){
+      if(t0===null)t0=ts;
+      var p=Math.min(1,(ts-t0)/700);p=1-Math.pow(1-p,3);
+      el.textContent=Math.round(n*p)+suf;
+      if(p<1)requestAnimationFrame(a);else el.textContent=n+suf;
+    });
+  }
+  if(window.IntersectionObserver){
+    var sio=new IntersectionObserver(function(es){
+      es.forEach(function(en){if(en.isIntersecting){animCount(en.target);sio.unobserve(en.target)}});
+    },{threshold:0.5});
+    document.querySelectorAll('#stlStats b').forEach(function(b){sio.observe(b)});
+  }
+  function submit2026(){
+    var v=$('y2026Input').value.trim();
+    if(!v){MEME.toast('先写一个梗，再挑战官方收录');return}
+    var s=document.createElement('span');s.className='newchip';s.textContent=v.slice(0,14);
+    $('y2026Chips').appendChild(s);$('y2026Input').value='';
+    SFX.sfx('win');MEME.burst(0.5,0.45);MEME.toast('恭喜！你的梗已编入《2026 梗编年史》');
+  }
+  $('y2026Add').addEventListener('click',submit2026);
+  $('y2026Input').addEventListener('keydown',function(e){if(e.key==='Enter')submit2026()});
+})();
+
+</script>
+</body>
+</html>

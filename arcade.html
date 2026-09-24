@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#FAF6EF">
+<script>/* 防主题闪烁 */(function(){try{var m=location.search.match(/[?&]theme=(light|dark)/);var t=m?m[1]:localStorage.getItem("meme-theme");if(!t&&window.matchMedia&&matchMedia("(prefers-color-scheme: dark)").matches)t="dark";if(t){document.documentElement.setAttribute("data-theme",t);var mc=document.querySelector("meta[name=\"theme-color\"]");if(mc)mc.content=t==="dark"?"#141419":"#FAF6EF"}}catch(e){}})();</script>
+<title>梗游厅 | 小破站梗文化博物馆</title>
+<meta name="description" content="梗游厅三大名场面：冰红茶翻瓶挑战、牢大肘击靶场、鸡你太美节奏现场。全程免费街机体验。">
+<link rel="canonical" href="https://meme-museum.example.com/arcade.html">
+<meta name="robots" content="index,follow">
+<meta property="og:site_name" content="小破站梗文化博物馆">
+<meta property="og:type" content="website">
+<meta property="og:title" content="梗游厅 · 五大名场面游戏 | 小破站梗文化博物馆">
+<meta property="og:description" content="冰红茶翻瓶挑战、牢大肘击靶场、鸡你太美节奏现场、电子木鱼修行、奥利给呐喊分贝机——五大梗文化游戏可玩。">
+<meta property="og:url" content="https://meme-museum.example.com/arcade.html">
+<meta property="og:image" content="https://meme-museum.example.com/docs/og-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="小破站梗文化博物馆：🕹️梗游厅">
+<meta property="og:locale" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="梗游厅 · 五大名场面游戏 | 小破站梗文化博物馆">
+<meta name="twitter:description" content="冰红茶翻瓶挑战、牢大肘击靶场、鸡你太美节奏现场、电子木鱼修行、奥利给呐喊分贝机——五大梗文化游戏可玩。">
+<meta name="twitter:image" content="https://meme-museum.example.com/docs/og-card.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"梗游厅","url":"https://meme-museum.example.com/arcade.html","description":"冰红茶翻瓶挑战、牢大肘击靶场、鸡你太美节奏现场、电子木鱼修行、奥利给呐喊分贝机——五大梗文化游戏可玩。","isPartOf":{"@type":"WebSite","name":"小破站梗文化博物馆","url":"https://meme-museum.example.com/"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://meme-museum.example.com/"},{"@type":"ListItem","position":2,"name":"梗游厅","item":"https://meme-museum.example.com/arcade.html"}]}}</script>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📺</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Noto+Sans+SC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/components.css"><link rel="stylesheet" href="css/arcade.css">
+</head>
+<body data-page="arcade">
+<div id="loader"><div class="panel"><div class="tv">📺</div><div class="bar"><i id="loadBar"></i></div><div class="msg" id="loadMsg">开馆中…</div></div></div>
+<main>
+<section class="page-hero"><div class="container">
+  <div class="crumbs"><a href="index.html"><i data-lucide="home"></i>首页</a> / 梗游厅</div>
+  <h1><i data-lucide="joystick" style="width:.85em;height:.85em;vertical-align:-.08em;margin-right:6px"></i><em>梗游厅</em> · 五大名场面，可玩</h1>
+  <p class="lead">有些梗光看不够，必须亲手玩：《冰红茶》翻瓶挑战、《牢大》肘击靶场、《鸡你太美》节奏现场、电子木鱼修行、奥利给分贝机——投币？不存在的，快乐免费。</p>
+</div></section>
+
+<section class="sec"><div class="container">
+  <div class="game-frame">
+    <div class="game-head">
+      <h3><span class="gno">GAME 01</span>🧊 冰红茶 · 翻瓶挑战</h3>
+      <span class="tip">按住蓄力 → 松手起翻 → 落罐站稳得分 · 空格键同样有效</span>
+    </div>
+    <div class="game-hudbar">
+      <span class="cell">成功<b class="pink" id="bottleOK">0</b></span>
+      <span class="cell">连击<b class="blue" id="bottleCombo">0</b></span>
+      <span class="cell">最高连击<b id="bottleBest">0</b></span>
+      <span class="cell">尝试<b id="bottleTry">0</b></span>
+    </div>
+    <div class="bottle-layout">
+      <div class="game-stage"><canvas id="bottleCv" width="560" height="360"></canvas></div>
+      <div class="bottle-side">
+        <button id="bottleBtn">按住蓄力</button>
+        <div class="cps-bar" aria-hidden="true"><i id="bottlePower"></i></div>
+        <p class="w-note">蓄力越满，转的圈数越多。落罐时瓶身越正得分越高——两圈半是艺术，三圈是玄学。</p>
+        <p class="bottle-log" id="bottleLog">冰红茶，就应该翻着喝。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="game-frame" style="margin-top:34px">
+    <div class="game-head">
+      <h3><span class="gno">GAME 02</span>🏀 牢大 · 肘击靶场</h3>
+      <span class="tip">30 秒限时 · 点击冒头的目标完成肘击 · 律师函肘不得</span>
+    </div>
+    <div class="game-hudbar">
+      <span class="cell">得分<b class="pink" id="elbowScore">0</b></span>
+      <span class="cell">剩余<b class="blue" id="elbowTime">30s</b></span>
+      <span class="cell">最佳<b id="elbowBest">0</b></span>
+    </div>
+    <div class="game-stage">
+      <div class="holes" id="elbowHoles"></div>
+      <div class="game-over" id="elbowOver">
+        <div class="big">肘 击 靶 场</div>
+        <div class="sub">目标：篮球 / 冰红茶 / 鸡哥 / 凌晨四点的闹钟 —— 见到一个肘一个</div>
+        <div class="sub" style="color:var(--pink);font-weight:800">⚠️ 律师函千万别肘，会扣分</div>
+        <button class="btn btn-primary" id="elbowStart"><i data-lucide="play"></i>开始肘击</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="game-frame" style="margin-top:34px">
+    <div class="game-head">
+      <h3><span class="gno">GAME 03</span>🐔 鸡你太美 · 节奏现场</h3>
+      <span class="tip">唱 · 跳 · Rap · 篮球 四轨音游 · 键盘 D F J K 或直接点轨道</span>
+    </div>
+    <div class="game-hudbar">
+      <span class="cell">得分<b class="pink" id="rzScore">0</b></span>
+      <span class="cell">连击<b class="blue" id="rzCombo">0</b></span>
+      <span class="cell">命中率<b id="rzAcc">--</b></span>
+      <span class="cell">音效<b><button id="rzMute" class="chip" style="padding:2px 12px">开</button></b></span>
+    </div>
+    <div class="game-stage">
+      <div class="rz-wrap">
+        <div class="rz-lanes" id="rzLanes"></div>
+        <div style="padding:0 18px 18px" class="gen-row">
+          <button class="btn btn-primary btn-sm" id="rzStart"><i data-lucide="play"></i>开始演出</button>
+          <span class="w-note" style="align-self:center">音符落到判定线时按键：越准分越高，MISS 会断连击。</span>
+        </div>
+      </div>
+      <div class="game-over" id="rzOver" style="display:none">
+        <div class="big" id="rzOverTitle">演 出 结 束</div>
+        <div class="sub" id="rzOverSub"></div>
+        <button class="btn btn-primary" id="rzRestart"><i data-lucide="rotate-ccw"></i>再来一次</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="game-frame" style="margin-top:34px">
+    <div class="game-head">
+      <h3><span class="gno">GAME 04</span>🪵 电子木鱼 · 敲击修行</h3>
+      <span class="tip">点击木鱼 / 空格敲击 · 连击不断功德翻倍 · 敲满 108 下功德圆满</span>
+    </div>
+    <div class="game-hudbar">
+      <span class="cell">功德<b class="pink" id="muyuMerit">0</b></span>
+      <span class="cell">连击<b class="blue" id="muyuCombo">0</b></span>
+      <span class="cell">累计敲击<b id="muyuTaps">0</b></span>
+      <span class="cell">修行时长<b id="muyuTime">00:00</b></span>
+      <span class="cell">称号<b id="muyuTitle">初入山门</b></span>
+    </div>
+    <div class="game-stage muyu-stage" id="muyuStage">
+      <div id="muyuMallet" aria-hidden="true"></div>
+      <div id="muyuDisc" role="button" tabindex="0" aria-label="敲击木鱼"><span>木鱼</span></div>
+    </div>
+    <p class="bottle-log" id="muyuLog">施主，敲一下，班味就少一分。</p>
+  </div>
+
+  <div class="game-frame" style="margin-top:34px">
+    <div class="game-head">
+      <h3><span class="gno">GAME 05</span>😤 奥利给 · 呐喊分贝机</h3>
+      <span class="tip">按住「呐喊」蓄力读秒 → 松手出判定 · 或开启真麦克风实测你的肺活量</span>
+    </div>
+    <div class="game-hudbar">
+      <span class="cell">当前<b class="pink" id="dbNow">0</b>dB</span>
+      <span class="cell">最高<b class="blue" id="dbPeak">0</b>dB</span>
+      <span class="cell">模式<b id="dbMode">模拟呐喊</b></span>
+    </div>
+    <div class="db-layout">
+      <div class="game-stage" style="position:relative">
+        <canvas id="dbCv" width="560" height="270" style="width:100%;display:block"></canvas>
+        <div class="db-num" id="dbNum">0<small>dB</small></div>
+      </div>
+      <div class="bottle-side">
+        <button id="dbBtn">按住呐喊</button>
+        <button id="dbMic" class="btn btn-sm" style="justify-content:center"><i data-lucide="mic"></i>真麦克风模式</button>
+        <button id="dbSettle" class="btn btn-blue btn-sm" style="justify-content:center;display:none"><i data-lucide="check"></i>收声判定</button>
+        <p class="w-note" id="dbFace" style="font-size:56px;text-align:center;line-height:1.2">😐</p>
+        <p class="w-note">模拟模式：按住越久分贝越高，松手出称号。麦克风模式：实测环境音，按「收声判定」结算。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec-head" style="margin-top:56px">
+    <span class="kicker"><i data-lucide="map"></i>馆内地图</span>
+    <h2>玩累了？<em>回展厅歇歇</em></h2>
+  </div>
+  <div class="arcade-links" id="moreHalls"></div>
+</div></section>
+</main>
+<div id="toasts" aria-live="polite"></div>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script src="js/data.js"></script><script src="js/core.js"></script><script src="js/sound.js"></script>
+<script src="js/fx.js"></script><script src="js/arcade.js"></script>
+</body>
+</html>

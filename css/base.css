@@ -1,0 +1,201 @@
+/* ============================================================
+   base.css · 设计令牌 + 壳层
+   Design Language: Pop Editorial（电视大字报 × 漫画贴纸）
+   ============================================================ */
+:root{
+  /* 色彩：纸感底 + 墨线 + 双品牌强调色（粉为主、蓝为辅、金绿点缀） */
+  --paper:#FAF6EF; --paper-2:#F3EDE2; --ink:#17171A; --ink-soft:#56565E;
+  --pink:#F25D8E; --pink-soft:#FFD9E5; --blue:#00A1D6; --blue-soft:#D3F1FB;
+  --gold:#FFC533; --green:#2AC864;
+  --line:var(--ink); --line-w:2px;
+  --shadow-hard:6px 6px 0 var(--ink);
+  --shadow-hard-sm:4px 4px 0 var(--ink);
+  --shadow-hard-pink:6px 6px 0 var(--pink);
+  /* 字体 */
+  --display:"ZCOOL KuaiLe","Noto Sans SC",sans-serif;
+  --body:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+  /* 节奏 */
+  --r-sm:8px; --r-md:12px; --r-lg:16px;
+  --t-fast:.15s; --t-med:.3s; --t-slow:.6s;
+  --ease-pop:cubic-bezier(.2,.9,.3,1.2);
+  --rail-h:64px;
+}
+html[data-theme="dark"]{
+  --paper:#141419; --paper-2:#1B1B22; --ink:#F2EFE8; --ink-soft:#A9A9B4;
+  --pink:#FF7BA5; --pink-soft:#3A2430; --blue:#33B9E4; --blue-soft:#143240;
+  --gold:#FFCE4F; --green:#43D67B;
+  --line:#08080A;
+  --shadow-hard:6px 6px 0 rgba(0,0,0,.9);
+  --shadow-hard-sm:4px 4px 0 rgba(0,0,0,.9);
+  --shadow-hard-pink:6px 6px 0 var(--pink);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+body{font-family:var(--body);background:var(--paper);color:var(--ink);line-height:1.75;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+/* 点阵背景固定为独立合成层：不再随滚动逐帧重绘（长页滚动卡顿主因） */
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:radial-gradient(rgba(23,23,26,.055) 1.2px,transparent 1.2px);background-size:26px 26px}
+html[data-theme="dark"] body::before{background-image:radial-gradient(rgba(255,255,255,.05) 1.2px,transparent 1.2px)}
+img,canvas{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input,select,textarea{font-family:inherit;font-size:1rem;color:var(--ink)}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:4px}
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+main{min-height:60vh}
+::selection{background:var(--pink);color:#fff}
+/* 电视扫描线装饰（区块分割，替代渐变光效） */
+.scanlines{height:14px;background:repeating-linear-gradient(90deg,var(--ink) 0 26px,transparent 26px 34px);opacity:.9}
+/* ============ 加载彩蛋 ============ */
+#loader{position:fixed;inset:0;z-index:999;background:var(--paper);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;transition:opacity .35s,visibility .35s}
+#loader.done{opacity:0;visibility:hidden;pointer-events:none}
+#loader .panel{border:var(--line-w) solid var(--ink);border-radius:var(--r-md);background:#fff;box-shadow:var(--shadow-hard);padding:30px 40px;text-align:center}
+html[data-theme="dark"] #loader .panel{background:var(--paper-2)}
+#loader .tv{font-size:46px;animation:tvBlink 1s steps(2) infinite}
+@keyframes tvBlink{50%{opacity:.35}}
+#loader .bar{width:min(280px,64vw);height:16px;border-radius:6px;background:var(--paper-2);border:var(--line-w) solid var(--ink);overflow:hidden;margin-top:14px}
+#loader .bar i{display:block;height:100%;width:0%;background:var(--pink);transition:width .2s}
+#loader .msg{font-family:var(--display);color:var(--ink);margin-top:12px;font-size:16px}
+@keyframes loaderAutoHide{to{opacity:0;visibility:hidden}}
+#loader{animation:loaderAutoHide .25s ease 1.2s forwards}
+/* ============ 顶部滚动进度条 ============ */
+#progress{position:fixed;top:0;left:0;height:5px;width:0%;background:var(--pink);z-index:210;border-right:3px solid var(--ink)}
+/* ============ 顶部导航 ============ */
+#topbar{position:sticky;top:0;z-index:200;background:var(--paper);border-bottom:var(--line-w) solid var(--ink)}
+#topbar .row{display:flex;align-items:center;gap:14px;height:66px}
+.logo{display:flex;align-items:center;gap:11px;user-select:none;cursor:pointer;flex:0 0 auto}
+.logo .tvbox{position:relative;width:44px;height:33px;background:var(--pink);border:var(--line-w) solid var(--ink);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--display);font-size:12px;letter-spacing:1px;box-shadow:3px 3px 0 var(--ink)}
+.logo .tvbox::before,.logo .tvbox::after{content:"";position:absolute;top:-9px;width:3px;height:11px;background:var(--ink);border-radius:2px}
+.logo .tvbox::before{left:10px;transform:rotate(-24deg)}
+.logo .tvbox::after{right:10px;transform:rotate(24deg)}
+.logo b{font-family:var(--display);font-weight:400;font-size:19px}
+.logo .sub{display:block;font-size:10.5px;color:var(--ink-soft);font-family:var(--body);letter-spacing:2px}
+/* 顶栏容器加宽：12 频道 + 搜索 + 按钮约 1330px 内容宽，原 1180px 必然溢出裁切 */
+#topbar .container{max-width:1480px}
+#topnav{display:flex;gap:1px;margin-left:8px;flex:0 1 auto;min-width:0}
+#topnav a{display:flex;align-items:center;padding:7px 9px;font-size:13px;font-weight:500;color:var(--ink-soft);transition:var(--t-fast);border-radius:6px;white-space:nowrap}
+#topnav a i{display:none} /* 顶栏 12 项去图标瘦身，防溢出 */
+#topnav a:hover{color:var(--ink);background:var(--paper-2)}
+#topnav a.on{color:var(--ink);font-weight:700;background:var(--gold);box-shadow:var(--shadow-hard-sm);border:var(--line-w) solid var(--ink)}
+.top-right{margin-left:auto;display:flex;align-items:center;gap:10px}
+.searchbox{display:flex;align-items:center;gap:8px;border:var(--line-w) solid var(--ink);background:#fff;border-radius:8px;padding:6px 12px;flex:0 1 216px;min-width:120px;box-shadow:var(--shadow-hard-sm);transition:var(--t-fast)}
+html[data-theme="dark"] .searchbox{background:var(--paper-2)}
+.searchbox:focus-within{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.searchbox i{width:15px;height:15px;color:var(--ink-soft);flex:0 0 auto}
+.searchbox input{border:none;outline:none;background:transparent;width:100%;font-size:13px}
+.searchbox .hint{font-size:11px;color:var(--ink-soft);border:1.5px solid var(--ink);border-radius:4px;padding:0 5px}
+.icon-btn{width:38px;height:38px;border-radius:8px;display:flex;align-items:center;justify-content:center;border:var(--line-w) solid var(--ink);background:#fff;box-shadow:var(--shadow-hard-sm);transition:var(--t-fast)}
+html[data-theme="dark"] .icon-btn{background:var(--paper-2)}
+.icon-btn:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--ink)}
+.icon-btn:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.icon-btn i{width:18px;height:18px}
+#hamburger{display:none}
+#mobileMenu{display:none}
+/* 顶栏断点（12 频道实测约 1110px 内容宽）：
+   ≥1420 全导航 + 搜索框；1200–1419 全导航、无搜索框；≤1199 收进汉堡菜单 */
+@media(max-width:1419px){.searchbox{display:none}}
+@media(max-width:1199px){#topnav{display:none}#hamburger{display:flex}}
+/* 汉堡下拉在所有收起宽度可用（旧版展开样式只在 ≤760px 存在，761–1560px 点了没反应） */
+#mobileMenu.open{display:grid;grid-template-columns:repeat(3,1fr);gap:2px 22px;position:absolute;top:66px;left:0;right:0;background:var(--paper);border-bottom:var(--line-w) solid var(--ink);box-shadow:var(--shadow-hard);padding:14px 24px 20px;max-height:calc(100vh - 90px);overflow-y:auto}
+#mobileMenu a{display:flex;align-items:center;gap:10px;padding:11px 6px;border-bottom:1.5px dashed var(--ink-soft);font-weight:600}
+#mobileMenu a i{width:17px;height:17px}
+@media(min-width:761px){#mobileMenu a:nth-last-child(-n+3){border-bottom:none}}
+@media(max-width:760px){.logo .sub{display:none}
+  #mobileMenu.open{grid-template-columns:1fr}
+  #mobileMenu a:last-child{border-bottom:none}
+}
+/* ============ 楼层侧导航（方形节点） ============ */
+#floors{position:fixed;right:16px;top:50%;transform:translateY(-50%);z-index:190;display:flex;flex-direction:column;gap:9px;background:var(--paper);border:var(--line-w) solid var(--ink);border-radius:10px;padding:12px 9px;box-shadow:var(--shadow-hard-sm)}
+#floors a{display:flex;align-items:center;gap:8px;justify-content:flex-end;padding:4px 6px;font-size:12px;font-weight:600;color:var(--ink-soft);transition:var(--t-fast);border-radius:5px}
+#floors a i.dot{width:9px;height:9px;background:var(--paper-2);border:1.5px solid var(--ink);flex:0 0 auto;transition:var(--t-fast)}
+#floors a span{display:none}
+#floors a:hover{color:var(--ink);background:var(--paper-2)}
+#floors a.on{color:var(--ink);font-weight:800}
+#floors a.on i.dot{background:var(--pink)}
+@media(min-width:1350px){#floors a span{display:inline}}
+@media(max-width:900px){#floors{display:none}}
+/* ============ 移动端底部导航 ============ */
+#bottomnav{position:fixed;left:0;right:0;bottom:0;z-index:195;display:none;background:var(--paper);border-top:var(--line-w) solid var(--ink);overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:env(safe-area-inset-bottom)}
+#bottomnav::-webkit-scrollbar{display:none}
+#bottomnav .inner{display:flex;gap:4px;padding:8px}
+#bottomnav a{flex:0 0 auto;padding:7px 13px;border-radius:7px;font-size:13px;font-weight:600;color:var(--ink-soft);white-space:nowrap;border:1.5px solid transparent;transition:var(--t-fast)}
+#bottomnav a i{width:14px;height:14px;vertical-align:-2px;margin-right:4px}
+#bottomnav a.on{background:var(--gold);color:var(--ink);border-color:var(--ink);font-weight:800}
+@media(max-width:900px){#bottomnav{display:block}}
+/* ============ 页脚 ============ */
+footer{margin-top:100px;background:var(--ink);color:#EDEAE2;padding:60px 0 120px;border-top:6px solid var(--pink)}
+html[data-theme="dark"] footer{background:#0B0B0E}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
+@media(max-width:800px){.foot-grid{grid-template-columns:1fr}}
+footer h4{font-family:var(--display);font-size:17px;margin-bottom:16px;color:var(--gold);letter-spacing:1px}
+footer p,footer li{font-size:13.5px;color:#B9B6AC}
+footer ul{list-style:none}
+footer li{padding:5px 0;border-bottom:1px solid rgba(255,255,255,.09)}
+footer li a{display:flex;align-items:center;gap:8px;transition:var(--t-fast)}
+footer li a:hover{color:#fff;transform:translateX(4px)}
+footer li a i{width:14px;height:14px;color:var(--pink)}
+footer .foot-bottom{margin-top:44px;padding-top:20px;border-top:1px solid rgba(255,255,255,.15);display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;font-size:12px;color:#8f8d84}
+/* ============ toast ============ */
+#toasts{position:fixed;left:50%;bottom:104px;transform:translateX(-50%);z-index:950;display:flex;flex-direction:column;gap:10px;align-items:center;pointer-events:none;width:max-content;max-width:92vw}
+.toast{background:var(--ink);color:var(--paper);border:2px solid var(--ink);box-shadow:4px 4px 0 var(--pink);padding:12px 24px;border-radius:8px;font-size:14px;font-weight:700;animation:toastIn .3s var(--ease-pop);max-width:92vw;text-align:center}
+html[data-theme="dark"] .toast{background:var(--paper-2);color:var(--ink);border-color:var(--ink);box-shadow:4px 4px 0 var(--pink)}
+@keyframes toastIn{from{opacity:0;transform:translateY(14px) scale(.92)}}
+.toast.out{opacity:0;transform:translateY(-10px);transition:.3s}
+body.wobble{animation:wobble .5s}
+@keyframes wobble{25%{transform:rotate(1.2deg)}50%{transform:rotate(-1.2deg)}75%{transform:rotate(.6deg)}}
+/* 自定义光标（桌面端） */
+#cursor{position:fixed;z-index:1000;width:16px;height:16px;border:2px solid var(--ink);border-radius:50%;pointer-events:none;transform:translate(-50%,-50%);transition:width .15s,height .15s,background .15s;display:none}
+#cursor.hot{width:30px;height:30px;background:var(--gold)}
+@media(hover:hover) and (pointer:fine){#cursor{display:block}}
+@media (prefers-reduced-motion: reduce){*{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* ============ Lucide 图标尺寸镜像 ============
+   lucide.createIcons() 会把 <i data-lucide> 替换为 <svg class="lucide">，
+   因此所有针对 <i> 的尺寸规则需为 <svg> 提供镜像。 */
+svg.lucide{flex:0 0 auto;vertical-align:-.15em;stroke-width:2.2}
+#topnav a svg{display:none} /* 与 i 镜像：lucide 替换后同样隐藏 */
+#topnav a.on svg{stroke:var(--ink)}
+.icon-btn svg{width:18px;height:18px}
+#mobileMenu a svg{width:17px;height:17px}
+#bottomnav a svg{width:14px;height:14px}
+footer li a svg{width:14px;height:14px}
+.searchbox svg{width:15px;height:15px}
+.btn svg{width:17px;height:17px}
+.kicker svg{width:14px;height:14px}
+.page-hero .crumbs svg{width:14px;height:14px}
+.page-hero h1 svg.lucide{width:.85em;height:.85em;vertical-align:-.08em;margin-right:6px}
+.dir-card svg{width:30px;height:30px}
+.dict-search svg{width:16px;height:16px}
+.dict-search input+.hint{margin-left:auto}
+.class-card .ico svg{width:26px;height:26px}
+.rank-panel h3 svg{width:19px;height:19px}
+.widget h3>svg{width:22px;height:22px}
+
+/* ---- 触屏优化 + 窄屏顶栏 ---- */
+button{touch-action:manipulation}
+@media(max-width:620px){
+  #topbar .top-right .btn-primary{display:none}
+  .logo b{font-size:15.5px}
+  .logo .tvbox{width:38px;height:28px;font-size:10px}
+  #topbar .container{padding:0 14px}
+}
+
+/* ============ fx.js 动感层 ============ */
+/* 滚动渐入：仅 fx-armed（JS 运行且非降级）时生效，否则内容恒可见 */
+.fx-armed .fx-rv{opacity:0;transform:translateY(22px) scale(.97);transition:opacity .5s ease,transform .55s cubic-bezier(.2,.8,.3,1)}
+.fx-armed .fx-rv.fx-in{opacity:1;transform:none}
+/* 波纹 */
+.fx-ripple{position:absolute;border-radius:50%;border:2.5px solid var(--ink);background:rgba(23,23,26,.06);pointer-events:none;animation:fxRipple .45s ease-out forwards;transform:scale(.25);opacity:.9}
+html[data-theme="dark"] .fx-ripple{border-color:var(--paper)}
+@keyframes fxRipple{to{transform:scale(1);opacity:0}}
+/* 页面擦除转场 */
+.fx-wipe{position:fixed;inset:0;z-index:1500;background:var(--pink);border-top:6px solid var(--ink);transform:translateY(101%);transition:transform .24s cubic-bezier(.5,0,.8,.4);pointer-events:none}
+.fx-wipe::after{content:"下次一定回来逛 ♂";position:absolute;left:50%;bottom:12%;transform:translateX(-50%);font-family:var(--display);font-size:17px;color:#fff;opacity:0;transition:opacity .2s .1s;white-space:nowrap}
+.fx-wipe.go{transform:translateY(0)}
+.fx-wipe.go::after{opacity:1}
+/* 顶栏滚动投影 */
+#topbar.scrolled{box-shadow:0 4px 0 rgba(23,23,26,.14)}
+/* 哲♂学厅光标拖尾 */
+.fx-trail{position:fixed;z-index:1400;pointer-events:none;font-size:15px;color:var(--pink);animation:fxTrail .9s ease-out forwards;transform:translate(-50%,-50%)}
+@keyframes fxTrail{to{transform:translate(-50%,-260%);opacity:0;rotate:-24deg}}
+@media (prefers-reduced-motion: reduce){.fx-ripple,.fx-trail{display:none}.fx-wipe{display:none}.fx-armed .fx-rv{opacity:1;transform:none;transition:none}}
